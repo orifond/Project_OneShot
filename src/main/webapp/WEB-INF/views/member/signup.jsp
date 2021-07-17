@@ -43,8 +43,7 @@
   
  </form>   
 </section>			
-		</div>
-	</section>
+
 
 	<footer id="footer">
 		<div id="footer_box">

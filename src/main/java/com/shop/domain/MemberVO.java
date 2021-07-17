@@ -3,6 +3,18 @@ package com.shop.domain;
 import java.util.Date;
 
 public class MemberVO {
+	
+	/*  
+    userId      varchar2(50)    not null,
+    userPass    varchar2(100)   not null,
+    userName    varchar2(30)    not null,
+    userPhon    varchar2(20)    not null,
+    userAddr1   varchar2(20)    not null,
+    userAddr2   varchar2(50)    not null,
+    userAddr3   varchar2(50)    not null,
+    regDate    date            default sysdate,
+    verify      number          default 0,
+*/
 
 	private String userId;
 	private String userPass;
