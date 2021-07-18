@@ -16,10 +16,16 @@ public class MemberDAOImpl implements MemberDAO {
 	// 매퍼
 	private static String namespace = "com.shop.mappers.memberMapper";
 
+	// 회원가입
 	@Override
 	public void signup(MemberVO vo) throws Exception {
 		sql.insert(namespace + ".signup", vo);
+	}
 
+	// 로그인
+	@Override
+	public MemberVO signin(MemberVO vo) throws Exception {
+		return sql.selectOne(namespace + ".signin", vo);
 	}
 
 }
