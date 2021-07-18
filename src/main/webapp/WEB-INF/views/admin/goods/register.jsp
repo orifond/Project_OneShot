@@ -55,7 +55,7 @@
 		</aside>
 		<div id="container_box">
 			<h2>상품 등록</h2>
-				
+			
 			<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
 			
 				<label>1차 분류</label>
@@ -67,23 +67,20 @@
 				<select class="category2" name="cateCode">
 					<option value="">전체</option>
 				</select>
+				
 			</form>
-			</div>
-			</section>
-	<section id="container">
-		<aside>
-			<%@ include file="../include/aside.jsp" %>
-		</aside>
-		<div id="container_box">
-			본문 영역
+			
 		</div>
 	</section>
+	
 	<footer id="footer">
 		<div id="footer_box">
 			<%@ include file="../include/footer.jsp" %>
 		</div>		
 	</footer>
-</div>
+	
+	
+	
 <script>
 // 컨트롤러에서 데이터 받기
 var jsonData = JSON.parse('${category}');
@@ -94,7 +91,6 @@ var cate1Obj = new Object();
 
 // 1차 분류 셀렉트 박스에 삽입할 데이터 준비
 for(var i 
-
 	if(jsonData[i].level == "1") {  // 레벨이 1인 데이터가 있다면 
 		cate1Obj = new Object();  // 초기화
 		
@@ -142,7 +138,6 @@ for(var i
 	        + cate2Arr[i].cateName + "</option>");
 	 } 
 	});
-
 
 </script>
 </body>
