@@ -5,7 +5,7 @@
 <ul>
 	<c:if test="${member == null}">
 		<li><a href="/member/signin">로그인</a></li>
-		<li><a href="/member/signup">회원가입</a></li>
+		<li><a href="/member/signup">회원 가입</a></li>
 	</c:if>
 	<c:if test="${member != null}">
 
