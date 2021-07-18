@@ -5,7 +5,7 @@
 <mapper namespace="com.shop.mappers.adminMapper">
     
 	<!-- 카테고리 호출 -->
-	<select id="category" resultType="com.kubg.domain.CategoryVO">
+	<select id="category" resultType="com.shop.domain.CategoryVO">
 		select
 			level, cateName, cateCode, cateCodeRef
 		from goods_category
