@@ -51,5 +51,15 @@ public class AdminController {
 		
 		return "redirect:/admin/index";
 	}
-		 
+	
+	// 상품 목록
+	@RequestMapping(value = "/goods/list", method = RequestMethod.GET)
+	public void getGoodsList(Model model) throws Exception {
+		logger.info("get goods list");
+		
+		List<GoodsVO> list = adminService.goodslist();  // GoodsVO형태의 List형 변수 list 선언
+		
+		model.addAttribute("list", list);  // 변수 list의 값을 list 세션에 부여
+	}
+			 
 }
