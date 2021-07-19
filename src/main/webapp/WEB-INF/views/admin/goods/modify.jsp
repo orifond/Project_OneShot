@@ -68,7 +68,7 @@ textarea#gdsDes { width:400px; height:180px; }
 			
 	<form role="form" method="post" autocomplete="off">
 	
-	<input type ="hidden" name="n" value="${goods.gdsNum}"/>
+	<input type ="hidden" name="gdsNum" value="${goods.gdsNum}"/>
 	
 	<div class="inputArea">	
 		<label>1차 분류</label>
@@ -108,7 +108,7 @@ textarea#gdsDes { width:400px; height:180px; }
 		<script>
 		 $("#back_Btn").click(function(){
 		  //history.back();
-		  location.href = "/admin/goods/view?n=" + ${goods.gdsNum};
+		  location.href = "/admin/goods/view?gdsNum=" + ${goods.gdsNum};
 		 });   
 		</script>
 
