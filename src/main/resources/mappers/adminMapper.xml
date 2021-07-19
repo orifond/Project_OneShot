@@ -25,6 +25,13 @@
  	from tbl_goods
  		order by gdsNum desc
 	</select>
+	
+	<!-- 상품 조회 -->
+	<select id="goodsView" resultType="com.shop.domain.GoodsVO">
+	 select gdsNum, gdsName, cateCode, gdsPrice, gdsStock, gdsDes, gdsImg, gdsDate
+	 	from tbl_goods
+	 	where gdsNum = #{gdsNum}
+	</select>
  
 
 </mapper>

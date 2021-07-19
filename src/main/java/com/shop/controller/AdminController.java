@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shop.domain.CategoryVO;
 import com.shop.domain.GoodsVO;
@@ -60,6 +61,16 @@ public class AdminController {
 		List<GoodsVO> list = adminService.goodslist();  // GoodsVO형태의 List형 변수 list 선언
 		
 		model.addAttribute("list", list);  // 변수 list의 값을 list 세션에 부여
+	}
+	
+	// 상품 조회
+	@RequestMapping(value = "/goods/view", method = RequestMethod.GET)
+	public void getGoodsview(@RequestParam("n") int gdsNum, Model model) throws Exception {
+		logger.info("get goods view");
+		
+		GoodsVO goods = adminService.goodsView(gdsNum);
+		
+		model.addAttribute("goods", goods);
 	}
 			 
 }
