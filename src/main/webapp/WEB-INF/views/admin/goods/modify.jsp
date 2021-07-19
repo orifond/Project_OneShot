@@ -1,7 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <html>
 <head>
 	<title>OneShot Admin</title>
@@ -73,45 +70,51 @@ textarea#gdsDes { width:400px; height:180px; }
 	
 	<input type ="hidden" name="n" value="${goods.gdsNum}"/>
 	
-		<div class="inputArea"> 
-		 <label>1차 분류</label>
-		 <span class="category1"></span>        
-		 <label>2차 분류</label>
-		 <span class="category2">${goods.cateCode}</span>
-		</div>
-		
-		<div class="inputArea">
-		 <label for="gdsName">상품명</label>
-		 <span>${goods.gdsName}</span>
-		</div>
-		
-		<div class="inputArea">
-		 <button type="button" id="modify_Btn" class="btn btn-warning">수정</button>
-		 <button type="button" id="delete_Btn" class="btn btn-danger">삭제</button>
-		 
-		 <script>
-		  var formObj = $("form[role='form']");
-		  
-		  $("#modify_Btn").click(function(){
-		   formObj.attr("action", "/admin/goods/modify");
-		   formObj.attr("method", "get")
-		   formObj.submit();
-		  });
-		  
-		  $("#delete_Btn").click(function(){
-			  
-			  var con = confirm("정말로 삭제하시겠습니까?");
-			  
-			  if(con) {      
-			   formObj.attr("action", "/admin/goods/delete");
-			   formObj.submit();
-			  }
-			 });
-		 </script>
-		</div>
+	<div class="inputArea">	
+		<label>1차 분류</label>
+		<select class="category1">
+			<option value="">전체</option>
+		</select>
+		<label>2차 분류</label>
+		<select class="category2" name="cateCode">
+			<option value="">전체</option>
+		</select>
+	</div>
 	
+	<div class="inputArea">
+		<label for="gdsName">상품명</label>
+		<input type="text" id="gdsName" name="gdsName" value="${goods.gdsName}"/>
+	</div>
+	
+	<div class="inputArea">
+		<label for="gdsPrice">상품가격</label>
+		<input type="text" id="gdsPrice" name="gdsPrice" value="${goods.gdsPrice}"/>
+	</div>
+	
+	<div class="inputArea">
+		<label for="gdsStock">상품수량</label>
+		<input type="text" id="gdsStock" name="gdsStock" value="${goods.gdsStock}"/>
+	</div>
+	
+	<div class="inputArea">
+		<label for="gdsDes">상품소개</label>
+		<textarea rows="5" cols="50" id="gdsDes" name="gdsDes">${goods.gdsDes}</textarea>
+	</div>
+	
+	<div class="inputArea">
+		<button type="submit" id="update_Btn" class="btn btn-primary">완료</button>
+		<button type="button" id="back_Btn" class="btn btn-primary">취소</button>
+		
+		<script>
+		 $("#back_Btn").click(function(){
+		  //history.back();
+		  location.href = "/admin/goods/view?n=" + ${goods.gdsNum};
+		 });   
+		</script>
+
+	</div>
 	</form>
-			
+				
 		</div>
 	</section>
 
@@ -188,25 +191,6 @@ $(document).on("change", "select.category1", function(){
 	});
 	
 });
-
-var select_cateCode = '${goods.cateCode}';
-var select_cateCodeRef = '${goods.cateCodeRef}';
-var select_cateName = '${goods.cateName}';
-
-if(select_cateCodeRef != null && select_cateCodeRef != '') {
- $(".category1").val(select_cateCodeRef);
- $(".category2").val(select_cateCode);
- $(".category2").children().remove();
- $(".category2").append("<option value='"
-       + select_cateCode + "'>" + select_cateName + "</option>");
-} else {
- $(".category1").val(select_cateCode);
- //$(".category2").val(select_cateCode);
- // select_cateCod가 부여되지 않는 현상이 있어서 아래 코드로 대체
- $(".category2").append("<option value="' + select_cateCode + '" selected='selected'>전체</option>");
-}
-
-
 </script>
 </body>
 </html>

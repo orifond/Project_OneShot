@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.shop.domain.CategoryVO;
 import com.shop.domain.GoodsVO;
+import com.shop.domain.GoodsViewVO;
 
 @Repository
 public class AdminDAOImpl implements AdminDAO {
@@ -37,10 +38,23 @@ public class AdminDAOImpl implements AdminDAO {
 		return sql.selectList(namespace + ".goodslist");
 	}
 	
-	// 상품조회
+	// 상품조회 + 카테고리 조인
 	@Override
-	public GoodsVO goodsView(int gdsNum) throws Exception {
+	public GoodsViewVO goodsView(int gdsNum) throws Exception {
 		return sql.selectOne(namespace + ".goodsView", gdsNum);
+	}
+	
+	// 상품 수정
+	@Override
+	public void goodsModify(GoodsVO vo) throws Exception {
+		System.out.println("modifytest");
+		sql.update(namespace + ".goodsModify", vo);
+	}
+	
+	// 상품 삭제
+	@Override
+	public void goodsDelete(int gdsNum) throws Exception {
+		sql.delete(namespace + ".goodsDelete", gdsNum);
 	}
 
 

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shop.domain.CategoryVO;
 import com.shop.domain.GoodsVO;
+import com.shop.domain.GoodsViewVO;
 import com.shop.service.AdminService;
 
 import net.sf.json.JSONArray;
@@ -68,9 +69,45 @@ public class AdminController {
 	public void getGoodsview(@RequestParam("n") int gdsNum, Model model) throws Exception {
 		logger.info("get goods view");
 		
-		GoodsVO goods = adminService.goodsView(gdsNum);
-		
+		GoodsViewVO goods = adminService.goodsView(gdsNum);
 		model.addAttribute("goods", goods);
 	}
+	
+	// 상품 수정 
+	@RequestMapping(value = "/goods/modify", method = RequestMethod.GET)
+	public void getGoodsModify(@RequestParam("n") int gdsNum, Model model) throws Exception {
+	// @RequestParam("n")으로 인해, URL주소에 있는 n의 값을 가져와 gdsNum에 저장
+		logger.info("get goods modify");
+		
+		GoodsViewVO goods = adminService.goodsView(gdsNum);  // GoodsVO형태 변수 goods에 상품 정보 저장
+		model.addAttribute("goods", goods);
+		
+		List<CategoryVO> category = null;
+		category = adminService.category();
+		model.addAttribute("category", JSONArray.fromObject(category));
+	}
+	
+	// 상품 수정
+	@RequestMapping(value = "/goods/modify", method = RequestMethod.POST)
+	public String postGoodsModify(GoodsVO vo) throws Exception {
+		 logger.info("post goods modify");
+	
+		 adminService.goodsModify(vo);
+		 
+		 return "redirect:/admin/index";
+		}
+	
+	// 상품 삭제
+	@RequestMapping(value = "/goods/delete", method = RequestMethod.POST)
+	public String postGoodsDelete(@RequestParam("n") int gdsNum) throws Exception {
+	// @RequestParam("n")으로 인해, URL주소에 있는 n의 값을 가져와 gdsNum에 저장
+	
+		logger.info("post goods delete");
+	
+		adminService.goodsDelete(gdsNum);
+		
+		return "redirect:/admin/index";
+	}
+	
 			 
 }
