@@ -59,7 +59,7 @@ public class AdminController {
 	public void getGoodsList(Model model) throws Exception {
 		logger.info("get goods list");
 		
-		List<GoodsVO> list = adminService.goodslist();  // GoodsVO형태의 List형 변수 list 선언
+		List<GoodsViewVO> list = adminService.goodslist();  // GoodsVO형태의 List형 변수 list 선언
 		
 		model.addAttribute("list", list);  // 변수 list의 값을 list 세션에 부여
 	}
@@ -77,9 +77,10 @@ public class AdminController {
 	@RequestMapping(value = "/goods/modify", method = RequestMethod.GET)
 	public void getGoodsModify(@RequestParam("n") int gdsNum, Model model) throws Exception {
 	// @RequestParam("n")으로 인해, URL주소에 있는 n의 값을 가져와 gdsNum에 저장
+		
 		logger.info("get goods modify");
 		
-		GoodsViewVO goods = adminService.goodsView(gdsNum);  // GoodsVO형태 변수 goods에 상품 정보 저장
+		GoodsViewVO goods = adminService.goodsView(gdsNum);  // GoodsViewVO형태 변수 goods에 상품 정보 저장
 		model.addAttribute("goods", goods);
 		
 		List<CategoryVO> category = null;
