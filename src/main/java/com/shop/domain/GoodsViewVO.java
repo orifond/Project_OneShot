@@ -16,6 +16,15 @@ public class GoodsViewVO {
 	private String cateCodeRef;
 	private String cateName;
 	
+	private String gdsThumbImg;
+	
+	
+	public String getGdsThumbImg() {
+		return gdsThumbImg;
+	}
+	public void setGdsThumbImg(String gdsThumbImg) {
+		this.gdsThumbImg = gdsThumbImg;
+	}
 	public String getCateCodeRef() {
 		return cateCodeRef;
 	}

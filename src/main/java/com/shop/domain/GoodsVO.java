@@ -3,7 +3,16 @@ package com.shop.domain;
 import java.util.Date;
 
 public class GoodsVO {
-
+/*  
+    gdsNum       number          not null,
+    gdsName      varchar2(50)    not null,
+    cateCode     varchar2(30)    not null,
+    gdsPrice     number          not null,
+    gdsStock     number          null,
+    gdsDes       varchar(500)    null,
+    gdsImg       varchar(200)    null,
+    gdsDate      date            default sysdate,
+*/
 	private int gdsNum;
 	private String gdsName;
 	private String cateCode;	

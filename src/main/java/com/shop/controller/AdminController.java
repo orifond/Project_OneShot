@@ -92,7 +92,7 @@ public class AdminController {
 	@RequestMapping(value = "/goods/modify", method = RequestMethod.POST)
 	public String postGoodsModify(GoodsVO vo) throws Exception {
 		 logger.info("post goods modify");
-	
+		 System.out.print(vo);
 		 adminService.goodsModify(vo);
 		 
 		 return "redirect:/admin/index";
