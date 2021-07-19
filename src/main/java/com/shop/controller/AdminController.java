@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.shop.domain.CategoryVO;
+import com.shop.domain.GoodsVO;
 import com.shop.service.AdminService;
 
 import net.sf.json.JSONArray;
@@ -39,6 +40,14 @@ public class AdminController {
 		List<CategoryVO> category = null;  // CatagoryVO 형태의 List형 변수 category 선언
 		category = adminService.category();  // DB에 저장된 카테고리를 가져와서 category에 저장
 		model.addAttribute("category", JSONArray.fromObject(category));  // 변수 category를 제이슨(json)타입으로 변환하여 category 세션에 부여
+	}
+	
+	// 상품 등록
+	@RequestMapping(value = "/goods/register", method = RequestMethod.POST)
+	public String postGoodsRegister(GoodsVO vo) throws Exception {
+		adminService.register(vo);
+		
+		return "redirect:/admin/index";
 	}
 
 }
