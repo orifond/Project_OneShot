@@ -30,7 +30,7 @@
 		
 		<div class="input_area">
 			<label for="userPass">패스워드</label>
-			<input type="password" id="userPass" name="userPass" required="required" value="123" />						
+			<input type="password" id="userPass" name="userPass" required="required" value="1234" />						
 		</div>
 							
 		<button type="submit" id="signin_btn" name="signin_btn">로그인</button>

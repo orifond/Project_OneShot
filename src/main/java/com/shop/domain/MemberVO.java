@@ -3,8 +3,7 @@ package com.shop.domain;
 import java.util.Date;
 
 public class MemberVO {
-	
-	/*  
+/*  
     userId      varchar2(50)    not null,
     userPass    varchar2(100)   not null,
     userName    varchar2(30)    not null,
@@ -15,7 +14,6 @@ public class MemberVO {
     regDate    date            default sysdate,
     verify      number          default 0,
 */
-
 	private String userId;
 	private String userPass;
 	private String userName;
