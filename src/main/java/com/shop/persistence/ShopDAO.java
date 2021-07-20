@@ -2,6 +2,7 @@ package com.shop.persistence;
 
 import java.util.List;
 
+import com.shop.domain.CartListVO;
 import com.shop.domain.CartVO;
 import com.shop.domain.GoodsViewVO;
 
@@ -17,7 +18,9 @@ public interface ShopDAO {
 	public GoodsViewVO goodsView(int gdsNum) throws Exception;
 	
 	// 카트 담기
-	public void addCart(CartVO cart) throws Exception;
+	public void addCart(CartListVO cart) throws Exception;
 	
+	// 카트 리스트
+	public List<CartListVO> cartList(String userId) throws Exception;
 
 }

@@ -14,6 +14,7 @@
 		</c:if>
 
 		<li>${member.userName}님 환영합니다.</li>
+			<a href="/shop/cartList">장바구니</a>
 		<li><a href="/member/signout">로그아웃</a></li>
 	</c:if>
 
