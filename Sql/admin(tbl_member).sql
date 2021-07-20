@@ -1,3 +1,4 @@
+/* tbl_member 쿼 리*/
 create table tbl_member (
     userId varchar2(50) not null,
     userPass varchar2(100) not null,
@@ -11,34 +12,25 @@ create table tbl_member (
     primary key(userId)
 );
 
+/* drop table tbl_member; */
 
-drop table tbl_member;
-
+/* 예시 삽입 */
 insert into tbl_member(userId, userPass, userName, userPhon)
     values('아이디', '비밀번호', '닉네임', '전화번호');
     
 select * from tbl_member;     
 
+/* 관리자 권한 부여 */
+update tbl_member
+    set
+        verify = 9
+    where userId = 'admin@oneshot.com';
+
 select userId,verify
     from tbl_member;    
 
-update tbl_member
-    set
-        verify = 9
-    where userId = 'admin@oneshot.com';
     
-update tbl_member
-    set
-        verify = 9
-    where userId = 'test@test';
-    
-delete from tbl_member
-    where userId = 'admin@oneshot.com';
-    
-delete from tbl_member
-    where userId = 'test@test';        
-    
-insert into tbl_member(userId, userPass, userName, userPhon, verify)
-    values('test@test', 'test', 'test', 'test', 9);
+/*delete from tbl_member
+    where userId = 'admin@oneshot.com'; */
     
 commit;    

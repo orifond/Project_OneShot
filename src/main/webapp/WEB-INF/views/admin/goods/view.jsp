@@ -45,6 +45,9 @@ label { display:inline-block; width:70px; padding:5px; }
 label[for='gdsDes'] { display:block; }
 input { width:150px; }
 textarea#gdsDes { width:400px; height:180px; }
+
+.oriImg { width:500px; height:auto; }
+.thumbImg {}
 </style>
 
 </head>
@@ -67,7 +70,7 @@ textarea#gdsDes { width:400px; height:180px; }
 			<%@ include file="../include/aside.jsp" %>
 		</aside>
 		<div id="container_box">
-			<h2>상품 등록</h2>
+			<h2>상품 조회</h2>
 			
 	<form role="form" method="post" autocomplete="off">
 	
@@ -81,8 +84,36 @@ textarea#gdsDes { width:400px; height:180px; }
 		</div>
 		
 		<div class="inputArea">
-		 <label for="gdsName">상품명</label>
-		 <span>${goods.gdsName}</span>
+			<label for="gdsName">상품명</label>
+			<span>${goods.gdsName}</span>
+		</div>
+		
+		<div class="inputArea">
+			<label for="gdsPrice">상품가격</label>
+			<span><fmt:formatNumber value="${goods.gdsPrice}" pattern="###,###,###"/></span>
+		</div>
+		
+		<div class="inputArea">
+			<label for="gdsStock">상품수량</label>
+			<span>${goods.gdsStock}</span>
+		</div>
+		
+		<div class="inputArea">
+			<label for="gdsDes">상품소개</label>
+			
+			<!--  <span>${goods.gdsDes}</span>  -->
+			
+			<div class="gdsDes">${goods.gdsDes}</div>
+			
+		</div>
+		
+		<div class="inputArea">
+			<label for="gdsImg">이미지</label>
+			<p>원본 이미지</p>
+			<img src="${goods.gdsImg}" class="oriImg"/>
+			
+			<p>썸네일</p>
+			<img src="${goods.gdsThumbImg}" class="thumbImg"/> 
 		</div>
 		
 		<div class="inputArea">
