@@ -49,4 +49,10 @@ public class ShopServiceImpl implements ShopService {
 		return dao.cartList(userId);
 	}
 	
+	// 카트 삭제
+	@Override
+	public void deleteCart(CartVO cart) throws Exception {
+		dao.deleteCart(cart);
+	}
+	
 }

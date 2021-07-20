@@ -161,13 +161,18 @@
 					   });
 					    
 					   $.ajax({
-					    url : "/shop/deleteCart",
-					    type : "post",
-					    data : { chbox : checkArr },
-					    success : function(){
-					     location.href = "/shop/cartList";
-					    }
-					   });
+						   url : "/shop/deleteCart",
+						   type : "post",
+						   data : { chbox : checkArr },
+						   success : function(result){
+						    if(result == 1) {          
+						     location.href = "/shop/cartList";
+						    } else {
+						     alert("삭제 실패");
+						    }
+						   }
+						  });
+					   
 					  } 
 					 });
 					</script>
@@ -200,8 +205,34 @@
 				    <span>최종 가격</span><fmt:formatNumber pattern="###,###,###" value="${cartList.gdsPrice * cartList.cartStock}" /> 원
 				   </p>
 				   
-				   <div class="delete">
-				    <button type="button" class="delete_btn" data-cartNum="${cartList.cartNum}">삭제</button>
+				<div class="delete">
+				 <button type="button" class="delete_${cartList.cartNum}_btn" data-cartNum="${cartList.cartNum}">삭제</button>
+				
+				    <script>
+						 $(".delete_${cartList.cartNum}_btn").click(function(){
+						  var confirm_val = confirm("정말 삭제하시겠습니까?");
+						  
+						  if(confirm_val) {
+						   var checkArr = new Array();
+						   
+						   checkArr.push($(this).attr("data-cartNum"));
+						              
+						   $.ajax({
+						    url : "/shop/deleteCart",
+						    type : "post",
+						    data : { chbox : checkArr },
+						    success : function(result){
+						     if(result == 1) {            
+						      location.href = "/shop/cartList";
+						     } else {
+						      alert("삭제 실패");
+						     }
+						    }
+						   });
+						  } 
+						 });
+						</script>
+				    
 				   </div>
 				  </div>   
 				 </li>
