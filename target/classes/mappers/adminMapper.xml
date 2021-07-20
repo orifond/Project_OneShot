@@ -71,7 +71,6 @@
 		        gdsPrice = #{gdsPrice}, 
 		        gdsStock = #{gdsStock},
 		        gdsDes = #{gdsDes},
-		        
 		        gdsImg = #{gdsImg},
 		        gdsThumbImg = #{gdsThumbImg}
 		        

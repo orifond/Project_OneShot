@@ -158,7 +158,7 @@ public class AdminController {
 	
 	// 상품 삭제
 	@RequestMapping(value = "/goods/delete", method = RequestMethod.POST)
-	public String postGoodsDelete(@RequestParam("gdsNum") int gdsNum) throws Exception {
+	public String postGoodsDelete(@RequestParam("n") int gdsNum) throws Exception {
 	// @RequestParam("n")으로 인해, URL주소에 있는 n의 값을 가져와 gdsNum에 저장
 	
 		logger.info("post goods delete");

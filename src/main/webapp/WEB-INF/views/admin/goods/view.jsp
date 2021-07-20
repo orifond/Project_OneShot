@@ -77,7 +77,7 @@ textarea#gdsDes { width:400px; height:180px; }
 			
 	<form role="form" method="post" autocomplete="off">
 	
-	<input type ="hidden" name="gdsNum" value="${goods.gdsNum}"/>
+	<input type ="hidden" name="n" value="${goods.gdsNum}"/>
 	
 		<div class="inputArea"> 
 		 <label>1차 분류</label>

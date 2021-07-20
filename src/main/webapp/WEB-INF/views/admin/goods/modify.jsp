@@ -144,12 +144,12 @@ textarea#gdsDes { width:400px; height:180px; }
 	
 	<div class="inputArea">
 		<button type="submit" id="update_Btn" class="btn btn-primary">완료</button>
-		<button type="button" id="back_Btn" class="btn btn-primary">취소</button>
+		<button type="button" id="back_Btn" class="btn btn-warning">취소</button>
 		
 		<script>
 		 $("#back_Btn").click(function(){
 		  //history.back();
-		  location.href = "/admin/goods/view?gdsNum=" + ${goods.gdsNum};
+		  location.href = "/admin/goods/view?n=" + ${goods.gdsNum};
 		 });   
 		</script>
 
