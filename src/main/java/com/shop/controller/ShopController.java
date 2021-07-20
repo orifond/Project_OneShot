@@ -58,7 +58,6 @@ public class ShopController {
 	 
 		 int result = 0;
 		 MemberVO member = (MemberVO)session.getAttribute("member");
-	 System.out.println("===========");
 		 if(member != null) {
 		  cart.setUserId(member.getUserId());
 		  service.addCart(cart);
