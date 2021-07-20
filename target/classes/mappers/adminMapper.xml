@@ -14,34 +14,40 @@
 
 	<!-- 상품 등록 -->
 	<insert id="register">
-	 insert into tbl_goods (gdsNum, gdsName, cateCode, gdsPrice, gdsStock, gdsDes, gdsImg, gdsThumbImg)
-	 	values (tbl_goods_seq.nextval, #{gdsName}, #{cateCode}, #{gdsPrice}, #{gdsStock}, #{gdsDes}, #{gdsImg}, #{gdsThumbImg})
-	</insert>	
-	
-	<!-- 상품 목록 --> 
-	<!--  
-	<select id="goodslist" resultType="com.shop.domain.GoodsVO">
-	 select
-	 	gdsNum, gdsName, cateCode, gdsPrice, gdsStock, gdsDes, gdsImg, gdsDate
- 	from tbl_goods
- 		order by gdsNum desc
+		insert into tbl_goods (gdsNum, gdsName, cateCode, gdsPrice, gdsStock, gdsDes, 
+								gdsImg, gdsThumbImg)
+	   		values (tbl_goods_seq.nextval, #{gdsName}, #{cateCode}, #{gdsPrice}, #{gdsStock}, #{gdsDes},
+	   		 		#{gdsImg}, #{gdsThumbImg})
+	</insert>
+ 
+	<!-- 상품 목록 -->	
+	<!-- 
+	<select id="goodslist" resultType="com.kubg.domain.GoodsVO">
+		select
+			gdsNum, gdsName, cateCode, gdsPrice, gdsStock, gdsDes, gdsImg, gdsDate
+	    from tbl_goods
+	        order by gdsNum desc
 	</select>
 	-->
 	
 	<select id="goodslist" resultType="com.shop.domain.GoodsViewVO">
-	 select
-	 	g.gdsNum, g.gdsName, g.cateCode, c.cateCodeRef, c.cateName, gdsPrice, gdsStock, gdsDes, gdsImg, gdsDate, g.gdsImg, g.gdsThumbImg
-	 		from tbl_goods g
-	 			inner join goods_category c
-	 				on g.cateCode = c.cateCode
+		select
+		    g.gdsNum, g.gdsName, g.cateCode, c.cateCodeRef, c.cateName, gdsPrice, gdsStock, gdsDes, gdsImg, gdsDate,
+		    g.gdsImg, g.gdsThumbImg
+		        from tbl_goods g
+		            inner join goods_category c
+		                on g.cateCode = c.cateCode
 	</select>
-
 	
-	<!--상품 조회
-	<select id="goodsView" resultType="com.shop.domain.GoodsVO">
-	 select gdsNum, gdsName, cateCode, gdsPrice, gdsStock, gdsDes, gdsImg, gdsDate
-	 	from tbl_goods
-	 	where gdsNum = #{gdsNum}
+	
+	
+	
+	<!-- 상품 조회 -->
+	<!-- 
+	<select id="goodsView" resultType="com.kubg.domain.GoodsVO">
+		select gdsNum, gdsName, cateCode, gdsPrice, gdsStock, gdsDes, gdsImg, gdsDate
+    		from tbl_goods
+        		where gdsNum = #{gdsNum}
 	</select>
 	-->
 	
@@ -50,34 +56,36 @@
 		select
 		    g.gdsNum, g.gdsName, g.cateCode, c.cateCodeRef, c.cateName, gdsPrice, gdsStock, gdsDes, gdsImg, gdsDate,
 		    g.gdsImg, g.gdsThumbImg
-		    from tbl_goods g 
-		    	inner join goods_category c 
-		    		on g.cateCode = c.cateCode
-		    where g.gdsNum = #{gdsNum}
+		        from tbl_goods g
+		            inner join goods_category c
+		                on g.cateCode = c.cateCode            
+	          		where g.gdsNum = #{gdsNum}
 	</select>
 	
 	<!-- 상품 수정 -->
 	<update id="goodsModify">
-		 update tbl_goods
-		 	set
-		 		gdsName = #{gdsName},
-		 		cateCode = #{cateCode},
-		 		gdsPrice = #{gdsPrice},
-		 		gdsStock = #{gdsStock},
-		 		gdsDes = #{gdsDes},
-		 		
-		 		gdsImg = #{gdsImg},
-		 		gdsThumbImg = #{gdsThumbImg}
-	 		where gdsNum = ${gdsNum}
+		update tbl_goods
+		    set
+		        gdsName = #{gdsName},
+		        cateCode = #{cateCode},
+		        gdsPrice = #{gdsPrice}, 
+		        gdsStock = #{gdsStock},
+		        gdsDes = #{gdsDes},
+		        
+		        gdsImg = #{gdsImg},
+		        gdsThumbImg = #{gdsThumbImg}
+		        
+		    where gdsNum = ${gdsNum}
 	</update>
 	
 	<!-- 상품 삭제 -->
 	<delete id="goodsDelete">
-		 delete
-		 	tbl_goods
-		 where gdsNum = #{gdsNum}
+		delete
+	   		tbl_goods
+		where gdsNum = #{gdsNum}
 	</delete>
-	
- 
+
 
 </mapper>
+
+

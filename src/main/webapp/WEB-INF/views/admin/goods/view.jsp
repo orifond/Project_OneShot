@@ -48,6 +48,9 @@ textarea#gdsDes { width:400px; height:180px; }
 
 .oriImg { width:500px; height:auto; }
 .thumbImg {}
+
+.gdsDes img { max-width:600px; height:auto; }
+
 </style>
 
 </head>
@@ -74,7 +77,7 @@ textarea#gdsDes { width:400px; height:180px; }
 			
 	<form role="form" method="post" autocomplete="off">
 	
-	<input type ="hidden" name="n" value="${goods.gdsNum}"/>
+	<input type ="hidden" name="gdsNum" value="${goods.gdsNum}"/>
 	
 		<div class="inputArea"> 
 		 <label>1차 분류</label>
@@ -101,7 +104,7 @@ textarea#gdsDes { width:400px; height:180px; }
 		<div class="inputArea">
 			<label for="gdsDes">상품소개</label>
 			
-			<!--  <span>${goods.gdsDes}</span>  -->
+			 <!--<span>${goods.gdsDes}</span> -->
 			
 			<div class="gdsDes">${goods.gdsDes}</div>
 			
