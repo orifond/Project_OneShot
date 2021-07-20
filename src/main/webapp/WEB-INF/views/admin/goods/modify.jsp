@@ -42,6 +42,8 @@ label { display:inline-block; width:70px; padding:5px; }
 label[for='gdsDes'] { display:block; }
 input { width:150px; }
 textarea#gdsDes { width:400px; height:180px; }
+
+.select_img img { width:500px; margin:20px 0; }}
 </style>
 
 </head>
@@ -66,7 +68,7 @@ textarea#gdsDes { width:400px; height:180px; }
 		<div id="container_box">
 			<h2>상품 등록</h2>
 			
-	<form role="form" method="post" autocomplete="off">
+	<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
 	
 	<input type ="hidden" name="gdsNum" value="${goods.gdsNum}"/>
 	
@@ -99,6 +101,29 @@ textarea#gdsDes { width:400px; height:180px; }
 	<div class="inputArea">
 		<label for="gdsDes">상품소개</label>
 		<textarea rows="5" cols="50" id="gdsDes" name="gdsDes">${goods.gdsDes}</textarea>
+	</div>
+	
+	<div class="inputArea">
+		 <label for="gdsImg">이미지</label>
+		 <input type="file" id="gdsImg" name="file" />
+		 <div class="select_img">
+		  <img src="${goods.gdsImg}" />
+		  <input type="hidden" name="gdsImg" value="${goods.gdsImg}" />
+		  <input type="hidden" name="gdsThumbImg" value="${goods.gdsThumbImg}" /> 
+		 </div>
+		 
+		 <script>
+		  $("#gdsImg").change(function(){
+		   if(this.files && this.files[0]) {
+		    var reader = new FileReader;
+		    reader.onload = function(data) {
+		     $(".select_img img").attr("src", data.target.result).width(500);        
+		    }
+		    reader.readAsDataURL(this.files[0]);
+		   }
+		  });
+		 </script>
+		 <%=request.getRealPath("/") %>
 	</div>
 	
 	<div class="inputArea">
@@ -191,6 +216,20 @@ $(document).on("change", "select.category1", function(){
 	});
 	
 });
+
 </script>
+		
+<script>
+var regExp = /[^0-9]/gi;
+
+$("#gdsPrice").keyup(function(){ numCheck($(this)); });
+$("#gdsStock").keyup(function(){ numCheck($(this)); });
+
+function numCheck(selector) {
+ var tempVal = selector.val();
+ selector.val(tempVal.replace(regExp, ""));
+}
+</script>
+
 </body>
 </html>

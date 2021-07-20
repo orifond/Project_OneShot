@@ -105,7 +105,11 @@ textarea#gdsDes { width:400px; height:180px; }
 	<div class="inputArea">
 	 <label for="gdsImg">이미지</label>
 	 <input type="file" id="gdsImg" name="file" />
-	 <div class="select_img"><img src="" /></div>
+	 <div class="select_img">
+	  <img src="${goods.gdsImg}" />
+	  <input type="hidden" name="gdsImg" value="${goods.gdsImg}" />
+	  <input type="hidden" name="gdsThumbImg" value="${goods.gdsThumbImg}" /> 
+	 </div>
 	 
 	 <script>
 	  $("#gdsImg").change(function(){
@@ -204,5 +208,17 @@ $(document).on("change", "select.category1", function(){
 	
 });
 </script>
+<script>
+var regExp = /[^0-9]/gi;
+
+$("#gdsPrice").keyup(function(){ numCheck($(this)); });
+$("#gdsStock").keyup(function(){ numCheck($(this)); });
+
+function numCheck(selector) {
+ var tempVal = selector.val();
+ selector.val(tempVal.replace(regExp, ""));
+}
+</script>
+
 </body>
 </html>
