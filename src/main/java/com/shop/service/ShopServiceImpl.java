@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.shop.domain.CartVO;
 import com.shop.domain.GoodsViewVO;
 import com.shop.persistence.ShopDAO;
 
@@ -28,4 +29,17 @@ public class ShopServiceImpl implements ShopService {
 			return dao.list(cateCode);
 		}
 	}
+	
+	// 상품 조회
+	@Override
+	public GoodsViewVO goodsView(int gdsNum) throws Exception {
+		return dao.goodsView(gdsNum);
+	}
+	
+	// 카트 담기
+	@Override
+	public void addCart(CartVO cart) throws Exception {
+		dao.addCart(cart);
+	}
+	
 }
