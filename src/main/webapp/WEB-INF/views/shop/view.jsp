@@ -86,7 +86,7 @@
 	 section.replyList div.userInfo .userName { font-size:24px; font-weight:bold; }
 	 section.replyList div.userInfo .date { color:#999; display:inline-block; margin-left:10px; }
 	 section.replyList div.repRating { padding:5px; margin:5px 0; }
-	 section.replyList div.replyContent { padding:10px; margin:20px 0; }
+	 section.replyList div.replyContent { padding:5px; margin:5px 0; }
 	</style>
 
 </head>
