@@ -1,4 +1,5 @@
 /* tbl_member Äõ ¸®*/
+
 create table tbl_member (
     userId varchar2(50) not null,
     userPass varchar2(100) not null,
