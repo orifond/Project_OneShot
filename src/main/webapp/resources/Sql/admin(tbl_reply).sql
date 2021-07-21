@@ -48,8 +48,14 @@ from tbl_reply r
     where gdsNum = 261;    
     
 
-/* delete from tbl_reply
-    where userId = 'admin@oneshot.com'; */
+-- 테이블 삭제 쿼리 테스트
+delete tbl_reply 
+    where repNum = 121
+        and userId = 'admin@oneshot.com';
+        
+        
+--         
+
 
 
 commit;

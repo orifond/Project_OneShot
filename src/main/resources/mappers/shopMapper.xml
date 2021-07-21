@@ -28,13 +28,13 @@
 	            where g.cateCode = #{cateCode}
 	</select>
 	
-	<!-- 리뷰 작성 -->
+	<!-- 상품 리뷰 작성 -->
 	<insert id="registReply">
 		insert into tbl_reply (gdsNum, userId, repNum, repCon, repRating)
 	   		values (#{gdsNum}, #{userId}, tbl_reply_seq.nextval, #{repCon}, #{repRating})
 	</insert>
 	
-	<!-- 리뷰 리스트 -->
+	<!-- 상품 리뷰 리스트 -->
 	<select id="replyList" resultType="com.shop.domain.ReplyListVO">
 		select
 		    r.gdsNum, r.userId, r.repNum, r.repCon, r.repDate, m.userName, r.repRating
@@ -42,6 +42,20 @@
 		    inner join tbl_member m
 		        on r.userId = m.userId
 		    where gdsNum = #{gdsNum}
+	</select>
+	
+	<!-- 상품 리뷰 삭제 -->
+	<delete id="deleteReply">
+		delete tbl_reply
+	   		where repNum = #{repNum}
+	       		and userId = #{userId}
+	</delete>
+	
+	<!-- 아이디 체크 -->
+	<select id="replyUserIdCheck" resultType="String">
+		select userId
+			from tbl_reply
+	   			where repNum = #{repNum}
 	</select>
 	
 	
