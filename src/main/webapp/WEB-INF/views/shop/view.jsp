@@ -88,6 +88,42 @@
 	 section.replyList div.repRating { padding:5px; margin:5px 0; }
 	 section.replyList div.replyContent { padding:5px; margin:5px 0; }
 	</style>
+	
+	<script> 
+	
+	//재사용을 위한 함수화
+	function replyList(){
+	
+	// 상품 리뷰 AJax처리
+	 var gdsNum = ${view.gdsNum};
+	 $.getJSON("/shop/view/replyList" + "?n=" + gdsNum, function(data){
+	  var str = "";
+	  
+	  $(data).each(function(){
+	   
+	   console.log(data);
+	   
+	   var repDate = new Date(this.repDate);
+	   repDate = repDate.toLocaleDateString("ko-US")
+	   
+	   str += "<li data-gdsNum='" + this.gdsNum + "'>"
+	     + "<div class='userInfo'>"
+	     + "<span class='userName'>" + this.userName + "</span>"
+	     + "<span class='date'>" + repDate + "</span>"
+	     + "</div>"
+	     + "<div class='repRating'>" + this.repRating + "</div>"
+	     + "<div class='replyContent'>" + this.repCon + "</div>"
+	     + "</li>";           
+	  });
+	  
+	  $("section.replyList ol").html(str);
+	 });
+	 
+	}
+	</script>
+
+
+
 
 </head>
 <body>
@@ -200,7 +236,35 @@
 				   </div>
 				   
 				   <div class="input_area">
-				    <button type="submit" id="reply_btn">리뷰 남기기</button>
+				    <button type="button" id="reply_btn">리뷰 작성</button>
+				    
+				    <script>
+					 $("#reply_btn").click(function(){
+					  
+					  var formObj = $(".replyForm form[role='form']");
+					  var gdsNum = $("#gdsNum").val();
+					  var repRating = $("#repRating").val()
+					  var repCon = $("#repCon").val()
+					  
+					  var data = {
+					    gdsNum : gdsNum,
+					    repCon : repCon
+					    };
+					  
+					  $.ajax({
+					   url : "/shop/view/registReply",
+					   type : "post",
+					   data : data,
+					   success : function(){
+					    replyList();
+					    $("#repCon").val("");
+					   }
+					  });
+					 });
+					</script>
+
+				    
+				    
 				   </div>
 				   
 				  </form>
@@ -210,6 +274,8 @@
 
 				<section class="replyList">
 				 <ol>
+				 
+				 <%--
 				 <c:forEach items="${reply}" var="reply">
 				
 				  <li>
@@ -221,14 +287,16 @@
 				      <div class="replyContent">${reply.repCon}</div>
 				    </li>
 				   </c:forEach>
+				--%>
 				</ol>    
+				
+				<script>
+				// 상품 리뷰 함수 호출
+				replyList();
+				</script>
+				
 				</section>
-				 
-				 
-				 
 				</div>
-				
-				
 			</section>
 			
 			<aside id="aside">

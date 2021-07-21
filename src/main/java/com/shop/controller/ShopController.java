@@ -51,11 +51,14 @@ public class ShopController {
 	 
 	 GoodsViewVO view = service.goodsView(gdsNum);
 	 model.addAttribute("view", view);
-	 
+	
+	 /* 
 	List<ReplyListVO> reply = service.replyList(gdsNum);
 	model.addAttribute("reply", reply);
+	*/
+	 
 	}
-	
+	/*
 	// 상품 리뷰 작성
 	@RequestMapping(value = "/view", method = RequestMethod.POST)
 	public String registReply(ReplyVO reply, HttpSession session) throws Exception {
@@ -67,6 +70,31 @@ public class ShopController {
 	 service.registReply(reply);
 	 
 	 return "redirect:/shop/view?n=" + reply.getGdsNum();
+	}
+	*/
+	
+	// 상품 리뷰 작성
+	@ResponseBody
+	@RequestMapping(value = "/view/registReply", method = RequestMethod.POST)
+	public void registReply(ReplyVO reply, HttpSession session) throws Exception {
+	 logger.info("regist reply");
+	 
+	 MemberVO member = (MemberVO)session.getAttribute("member");
+	 reply.setUserId(member.getUserId());
+	 
+	 service.registReply(reply);
+	} 
+	
+	
+	// 상품 리뷰 목록
+	@ResponseBody
+	@RequestMapping(value = "/view/replyList", method = RequestMethod.GET)
+	public List<ReplyListVO> getReplyList(@RequestParam("n") int gdsNum) throws Exception {
+		logger.info("get reply list");
+				
+		List<ReplyListVO> reply = service.replyList(gdsNum);
+		
+		return reply;
 	}
 	
 	
