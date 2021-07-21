@@ -9,7 +9,7 @@
 		</ul>
 	</li>
 	
-	<li><a href="/shop/list?c=200&l=2">가구</a>
+	<li><a href="/shop/list?c=200&l=1">가구</a>
 		<ul class="low">
 			<li><a href="/shop/list?c=201&l=2">소파</a></li>
 			<li><a href="/shop/list?c=202&l=2">침대</a></li>
