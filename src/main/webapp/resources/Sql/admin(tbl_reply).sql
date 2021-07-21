@@ -59,6 +59,13 @@ select userId from tbl_reply
     where repNum =122;
 
 
+-- 테이블 수정 쿼리 테스트
+update tbl_reply
+    set
+        repCon = '수정한 내용'
+    where repNum = 122
+        and userId = 'admin@oneshot.com';
+
 
 commit;
 

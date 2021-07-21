@@ -85,7 +85,6 @@ public class ShopController {
 	 service.registReply(reply);
 	} 
 	
-	
 	// 상품 리뷰 목록
 	@ResponseBody
 	@RequestMapping(value = "/view/replyList", method = RequestMethod.GET)
@@ -118,6 +117,27 @@ public class ShopController {
 	 
 	 return result; 
 	}
+	
+	// 상품 소감(댓글) 수정
+	@ResponseBody
+	@RequestMapping(value = "/view/modifyReply", method = RequestMethod.POST)
+	public int modifyReply(ReplyVO reply, HttpSession session) throws Exception {
+	 logger.info("modify reply");
+	 
+	 int result = 0;
+	 
+	 MemberVO member = (MemberVO)session.getAttribute("member");
+	 String userId = service.idCheck(reply.getRepNum());
+	 
+	 if(member.getUserId().equals(userId)) {
+	  
+	  reply.setUserId(member.getUserId());
+	  service.modifyReply(reply);
+	  result = 1;
+	 }
+	 
+	 return result;
+	} 
 	
 	// 카트 담기
 	@ResponseBody

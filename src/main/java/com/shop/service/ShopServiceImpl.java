@@ -52,15 +52,21 @@ public class ShopServiceImpl implements ShopService {
 	}
 	
 	// 상품 소감(댓글) 삭제
-		@Override
-		public void deleteReply(ReplyVO reply) throws Exception {
-			dao.deleteReply(reply);
-		}
+	@Override
+	public void deleteReply(ReplyVO reply) throws Exception {
+		dao.deleteReply(reply);
+	}
 
 	// 아이디 체크
 	@Override
 	public String idCheck(int repNum) throws Exception {
 		return dao.idCheck(repNum);
+	}
+	
+	// 상품 리뷰 수정
+	@Override
+	public void modifyReply(ReplyVO reply) throws Exception {
+		dao.modifyReply(reply);
 	}
 	
 	// 카트 담기

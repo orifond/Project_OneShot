@@ -28,6 +28,9 @@ public interface ShopDAO {
 	// 상품 리뷰 삭제
 	public void deleteReply(ReplyVO reply) throws Exception;
 	
+	// 상품 리뷰 수정
+	public void modifyReply(ReplyVO reply) throws Exception;
+	
 	// 아이디 체크
 	public String idCheck(int repNum) throws Exception;
 	

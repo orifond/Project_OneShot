@@ -74,6 +74,11 @@ public class ShopDAOImpl implements ShopDAO {
 		return sql.selectOne(namespace + ".replyUserIdCheck", repNum);
 	}
 	
+	// 상품 리뷰 수정
+	@Override
+	public void modifyReply(ReplyVO reply) throws Exception {
+		sql.update(namespace + ".modifyReply", reply);
+	}
 	
 	// 카트 담기
 	@Override
