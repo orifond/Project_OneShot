@@ -54,7 +54,9 @@ delete tbl_reply
         and userId = 'admin@oneshot.com';
         
         
---         
+-- 리뷰 번호(repNum) 작성자 확인 쿼리
+select userId from tbl_reply
+    where repNum =122;
 
 
 
