@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.shop.domain.CartListVO;
 import com.shop.domain.CartVO;
 import com.shop.domain.GoodsViewVO;
+import com.shop.domain.ReplyVO;
 
 
 @Repository
@@ -47,6 +48,13 @@ public class ShopDAOImpl implements ShopDAO {
 		return sql.selectOne("com.shop.mappers.adminMapper"
 						+ ".goodsView", gdsNum);
 	}
+	
+	// 상품 리뷰 작성
+	@Override
+	public void registReply(ReplyVO reply) throws Exception {
+		sql.insert(namespace + ".registReply", reply);
+	}
+	
 	
 	// 카트 담기
 	@Override

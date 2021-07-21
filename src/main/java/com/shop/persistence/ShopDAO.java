@@ -5,6 +5,7 @@ import java.util.List;
 import com.shop.domain.CartListVO;
 import com.shop.domain.CartVO;
 import com.shop.domain.GoodsViewVO;
+import com.shop.domain.ReplyVO;
 
 public interface ShopDAO {
 
@@ -14,8 +15,11 @@ public interface ShopDAO {
 	// 카테고리별 상품 리스트 : 2차 분류
 	public List<GoodsViewVO> list(int cateCode) throws Exception;
 	
-	// 상품조회
+	// 상품 조회
 	public GoodsViewVO goodsView(int gdsNum) throws Exception;
+	
+	// 상품 리뷰 작성
+	public void registReply(ReplyVO reply) throws Exception;
 	
 	// 카트 담기
 	public void addCart(CartListVO cart) throws Exception;

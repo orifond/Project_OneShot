@@ -166,7 +166,39 @@
 				 
 				 <div class="gdsDes">${view.gdsDes}</div>
 				</div>
+				
+				<div id="reply">
 
+				 <c:if test="${member == null }">
+				  <p>리뷰를 남기시려면 <a href="/member/signin">로그인</a>해주세요</p>
+				 </c:if>
+				 
+				 <c:if test="${member != null}">
+				 <section class="replyForm">
+				  <form role="form" method="post" autocomplete="off">
+				  
+				  <input type="hidden" name="gdsNum" value="${view.gdsNum}">
+				  
+				   <div class="input_area">
+				    <textarea name="repCon" id="repCon"></textarea>
+				   </div>
+				   
+				   <div class="input_area">
+				    <button type="submit" id="reply_btn">리뷰 남기기</button>
+				   </div>
+				   
+				  </form>
+				 </section>
+				 </c:if>
+				 
+				 <section class="replyList">
+				  <ol>
+				   <li>리뷰 목록</li>
+				   </ol>    
+				 </section>
+				</div>
+				
+				
 			</section>
 			
 			<aside id="aside">

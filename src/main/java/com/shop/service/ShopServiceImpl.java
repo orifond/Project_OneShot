@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.shop.domain.CartListVO;
 import com.shop.domain.CartVO;
 import com.shop.domain.GoodsViewVO;
+import com.shop.domain.ReplyVO;
 import com.shop.persistence.ShopDAO;
 
 @Service
@@ -36,6 +37,13 @@ public class ShopServiceImpl implements ShopService {
 	public GoodsViewVO goodsView(int gdsNum) throws Exception {
 		return dao.goodsView(gdsNum);
 	}
+	
+	// 상품 리뷰 작성
+	@Override
+	public void registReply(ReplyVO reply) throws Exception {
+		dao.registReply(reply);		
+	}
+	
 	
 	// 카트 담기
 	@Override

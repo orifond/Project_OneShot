@@ -18,6 +18,7 @@ import com.shop.domain.CartListVO;
 import com.shop.domain.CartVO;
 import com.shop.domain.GoodsViewVO;
 import com.shop.domain.MemberVO;
+import com.shop.domain.ReplyVO;
 import com.shop.service.ShopService;
 
 @Controller
@@ -49,6 +50,19 @@ public class ShopController {
 	 
 	 GoodsViewVO view = service.goodsView(gdsNum);
 	 model.addAttribute("view", view);
+	}
+	
+	// 상품 리뷰 작성
+	@RequestMapping(value = "/view", method = RequestMethod.POST)
+	public String registReply(ReplyVO reply, HttpSession session) throws Exception {
+	 logger.info("regist reply");
+	 
+	 MemberVO member = (MemberVO)session.getAttribute("member");
+	 reply.setUserId(member.getUserId());
+	 
+	 service.registReply(reply);
+	 
+	 return "redirect:/shop/view?n=" + reply.getGdsNum();
 	}
 	
 	
