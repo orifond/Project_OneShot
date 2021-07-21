@@ -94,7 +94,7 @@
 			<section id="content">
 
 				<form role="form" method="post">
-				 <input type="hidden" name="gdsNum" value="${view.gdsNum}" />
+				 <input type="hidden" id="gdsNum" name="gdsNum" value="${view.gdsNum}" />
 				</form>
 				
 				<!-- 상품 조회 -->
@@ -118,7 +118,7 @@
 				  
 				  <p class="cartStock">
 				   <span>구입 수량</span>
-				   <input type="number" min="1" max="${view.gdsStock}" value="1" />  
+				   <input type="number" id="cartStock" min="1" max="${view.gdsStock}" value="1" />  
 				  </p>
 				  
 				  
@@ -129,7 +129,9 @@
 					 <script>
 					 $(".addCart_btn").click(function(){
 					  var gdsNum = $("#gdsNum").val();
-					  var cartStock = $(".numBox").val();
+					  var cartStock = $("#cartStock").val();
+					  console.log(gdsNum)
+					  console.log(cartStock)
 					           
 					  var data = {
 					    gdsNum : gdsNum,

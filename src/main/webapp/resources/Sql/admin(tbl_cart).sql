@@ -48,10 +48,10 @@ from tbl_cart c
     
     
     
-<!-- 카트 삭제 -->
-<delete id="deleteCart">
- delete tbl_cart
- ? ? where cartNum = #{cartNum}
- ? ? ? ? and userId = #{userId}
-</delete>    
+/* 카트 삭제 */
+delete tbl_cart
+    where cartNum = 86
+        and userId = 'admin@oneshot.com';
+        
+select * from tbl_cart;
     

@@ -56,7 +56,7 @@ public class ShopController {
 	@ResponseBody
 	@RequestMapping(value = "/view/addCart", method = RequestMethod.POST)
 	public int addCart(CartListVO cart, HttpSession session) throws Exception {
-	 
+		 System.out.print(cart);
 		 int result = 0;
 		 MemberVO member = (MemberVO)session.getAttribute("member");
 		 if(member != null) {
