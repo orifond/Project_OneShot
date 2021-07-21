@@ -1,4 +1,5 @@
 /* goods_category Äõ ¸®*/
+
 create table goods_category (
     cateName varchar2(20) not null,
     cateCode varchar2(30) not null,

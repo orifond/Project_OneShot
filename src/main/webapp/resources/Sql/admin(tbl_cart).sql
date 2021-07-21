@@ -9,7 +9,7 @@ create table tbl_cart (
     primary key(cartNum, userId)
 );
 
-drop table tbl_cart;
+-- drop table tbl_cart;
 
 create sequence tbl_cart_seq;
 
@@ -44,14 +44,14 @@ select
 from tbl_cart c
     inner join tbl_goods g
         on c.gdsNum = g.gdsNum
-    where c.userId = 'admin@oneshot.com';
-    
-    
+    where c.userId = 'admin@oneshot.com';    
     
 /* 카트 삭제 */
+/*
 delete tbl_cart
     where cartNum = 86
         and userId = 'admin@oneshot.com';
-        
+*/
+
 select * from tbl_cart;
     

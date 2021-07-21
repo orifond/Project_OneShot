@@ -1,4 +1,5 @@
 /* tbl_goods Äõ ¸®*/
+
 create table tbl_goods (
     gdsNum number not null,
     gdsName varchar2(50) not null,
