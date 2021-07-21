@@ -27,21 +27,21 @@ alter table tbl_reply
     references tbl_member(userId);
     
 -- 리뷰 추가 쿼리문 테스트
-insert into tbl_reply (gdsNum, userId, repNum, repCon)
-    values(261, 'admin@oneshot.com', tbl_reply_seq.nextval, '리뷰 테스트 내용');
+insert into tbl_reply (gdsNum, userId, repNum, repCon, repRating)
+    values(261, 'admin@oneshot.com', tbl_reply_seq.nextval, '리뷰 테스트 내용', '5');
 
 select * from tbl_reply;
 
 
 -- 리뷰 리스트 쿼리문 테스트 (상품 번호 이용)
 select
-    gdsNum, userId, repNum, repCon, repDate
+    gdsNum, userId, repNum, repCon, repDate, repRating
 from tbl_reply
     where gdsNum = 261;
     
 -- 유저 닉네임 표시 쿼리문 (tbl_member + tbl_reply 조인)
 select
-    r.gdsNum, r.userId, r.repNum, r.repCon, r.repDate, m.userName
+    r.gdsNum, r.userId, r.repNum, r.repCon, r.repDate, m.userName, r.repRating
 from tbl_reply r
     inner join tbl_member m
         on r.userId = m.userId
@@ -54,11 +54,4 @@ from tbl_reply r
 
 commit;
 
-alter table tbl_reply
-    add constraint tbl_reply_userId foreign key(userId)
-    references tbl_member(userId);
-    
-    
 
-alter table tbl_reply
-    add column review_avg number not null default 0;

@@ -15,6 +15,7 @@ public class ReplyVO {
 	private String userId;
 	private int repNum;
 	private String repCon;
+	private int repRating;
 	private Date repDate;
 	
 	
@@ -41,6 +42,13 @@ public class ReplyVO {
 	}
 	public void setRepCon(String repCon) {
 		this.repCon = repCon;
+	}
+	
+	public int getRepRating() {
+		return repRating;
+	}
+	public void setRepRating(int repRating) {
+		this.repRating = repRating;
 	}
 	public Date getRepDate() {
 		return repDate;

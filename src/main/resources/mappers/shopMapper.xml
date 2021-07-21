@@ -30,14 +30,14 @@
 	
 	<!-- 리뷰 작성 -->
 	<insert id="registReply">
-		insert into tbl_reply (gdsNum, userId, repNum, repCon)
-	   		values (#{gdsNum}, #{userId}, tbl_reply_seq.nextval, #{repCon})
+		insert into tbl_reply (gdsNum, userId, repNum, repCon, repRating)
+	   		values (#{gdsNum}, #{userId}, tbl_reply_seq.nextval, #{repCon}, #{repRating})
 	</insert>
 	
 	<!-- 리뷰 리스트 -->
 	<select id="replyList" resultType="com.shop.domain.ReplyListVO">
 		select
-		    r.gdsNum, r.userId, r.repNum, r.repCon, r.repDate, m.userName
+		    r.gdsNum, r.userId, r.repNum, r.repCon, r.repDate, m.userName, r.repRating
 		from tbl_reply r
 		    inner join tbl_member m
 		        on r.userId = m.userId

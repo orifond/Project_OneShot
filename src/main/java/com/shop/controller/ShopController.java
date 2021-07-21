@@ -18,6 +18,7 @@ import com.shop.domain.CartListVO;
 import com.shop.domain.CartVO;
 import com.shop.domain.GoodsViewVO;
 import com.shop.domain.MemberVO;
+import com.shop.domain.ReplyListVO;
 import com.shop.domain.ReplyVO;
 import com.shop.service.ShopService;
 
@@ -50,6 +51,9 @@ public class ShopController {
 	 
 	 GoodsViewVO view = service.goodsView(gdsNum);
 	 model.addAttribute("view", view);
+	 
+	List<ReplyListVO> reply = service.replyList(gdsNum);
+	model.addAttribute("reply", reply);
 	}
 	
 	// 상품 리뷰 작성

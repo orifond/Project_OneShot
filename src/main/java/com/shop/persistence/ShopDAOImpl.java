@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.shop.domain.CartListVO;
 import com.shop.domain.CartVO;
 import com.shop.domain.GoodsViewVO;
+import com.shop.domain.ReplyListVO;
 import com.shop.domain.ReplyVO;
 
 
@@ -53,6 +54,12 @@ public class ShopDAOImpl implements ShopDAO {
 	@Override
 	public void registReply(ReplyVO reply) throws Exception {
 		sql.insert(namespace + ".registReply", reply);
+	}
+	
+	// 상품 리뷰 리스트
+	@Override
+	public List<ReplyListVO> replyList(int gdsNum) throws Exception {
+		return sql.selectList(namespace + ".replyList", gdsNum);
 	}
 	
 	
