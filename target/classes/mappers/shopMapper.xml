@@ -126,7 +126,7 @@
 		select 
 		    o.orderId, o.userId, o.orderRec,
 		    o.userAddr1, o.userAddr2, o.userAddr3,
-		    o.orderPhon, o.amount, o.orderDate, o.delivery,
+		    o.orderPhon, o.amount, o.orderDate,
 		    d.orderDetailsNum, d.gdsNum, d.cartStock,
 		    g.gdsName, g.gdsThumbImg, g.gdsPrice
 		from tbl_order o

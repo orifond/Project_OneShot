@@ -37,8 +37,5 @@ public class OrderDetailVO {
 	public void setCartStock(int cartStock) {
 		this.cartStock = cartStock;
 	}
-	
-	
-	
 		 
 }
