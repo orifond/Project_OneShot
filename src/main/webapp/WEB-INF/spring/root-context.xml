@@ -19,6 +19,7 @@
 	<!-- 자신이 사용하는 오라클 계정과 비밀번호로 변경 -->
 		<property value="sys as sysdba" name="username"/>
 		<property value="1234" name="password"/>
+		<!-- 수정 scott tiger -->
 	</bean>
 	
 	<!-- 마이바티스 -->

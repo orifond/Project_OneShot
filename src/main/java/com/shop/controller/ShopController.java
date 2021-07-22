@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shop.domain.CartListVO;
 import com.shop.domain.CartVO;
+import com.shop.domain.CategoryVO;
 import com.shop.domain.GoodsViewVO;
 import com.shop.domain.MemberVO;
 import com.shop.domain.OrderDetailVO;
@@ -25,6 +26,7 @@ import com.shop.domain.OrderListVO;
 import com.shop.domain.OrderVO;
 import com.shop.domain.ReplyListVO;
 import com.shop.domain.ReplyVO;
+import com.shop.service.AdminService;
 import com.shop.service.ShopService;
 
 @Controller
@@ -33,8 +35,12 @@ public class ShopController {
 
  private static final Logger logger = LoggerFactory.getLogger(ShopController.class);
  
- @Inject
- ShopService service;
+	 @Inject
+	 ShopService service;
+ 
+	@Inject
+	 AdminService adservice;
+
     
 	// 카테고리별 상품 리스트
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -48,7 +54,17 @@ public class ShopController {
 		model.addAttribute("list", list);
 		
 	}
-	
+
+	// 카테고리 리스트
+	@ResponseBody
+	@RequestMapping(value = "/categories", method = RequestMethod.GET)
+	public List<CategoryVO> getCategories() throws Exception {
+		List<CategoryVO> category = adservice.category();
+		logger.info(">>>>> category2: " + category.toString());
+
+		return category;
+
+	}
 	// 상품 조회
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
 	public void getView(@RequestParam("n") int gdsNum, Model model) throws Exception {

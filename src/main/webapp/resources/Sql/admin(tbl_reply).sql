@@ -70,4 +70,5 @@ select * from tbl_reply;
 
 commit;
 
+drop table tbl_reply; 
 
