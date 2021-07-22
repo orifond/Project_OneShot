@@ -62,10 +62,11 @@ select userId from tbl_reply
 -- 테이블 수정 쿼리 테스트
 update tbl_reply
     set
-        repCon = '수정한 내용'
+        repCon = '수정한 리뷰 내용'
     where repNum = 122
         and userId = 'admin@oneshot.com';
 
+select * from tbl_reply;
 
 commit;
 
