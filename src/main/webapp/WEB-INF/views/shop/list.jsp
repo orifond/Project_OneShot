@@ -89,7 +89,7 @@
 				 <c:forEach items="${list}" var="list">
 				 <li>
 				  <div class="goodsThumb">
-				   <img src="${list.gdsThumbImg}">
+				   <img src="${list.gdsImg}">
 				  </div> 
 				  <div class="goodsName">
 				   <a href="/shop/view?n=${list.gdsNum}">${list.gdsName}</a>

@@ -9,7 +9,7 @@
 	<select id="list_1" resultType="com.shop.domain.GoodsViewVO">
 	select
 	    g.gdsNum, g.gdsName, g.cateCode, c.cateCodeRef, c.cateName,
-	    gdsPrice, gdsStock, gdsDes, gdsDate, g.gdsImg, g.gdsThumbImg
+	    gdsPrice, gdsStock, gdsDes, gdsDate, g.gdsImg
 	        from tbl_goods g
 	            inner join goods_category c
 	                on g.cateCode = c.cateCode            
@@ -17,7 +17,8 @@
 	            	or c.cateCodeRef = #{cateCodeRef}
 	</select>
 	
-	<!-- 카테고리별 상품 리스트 : 2차 분류 -->
+	<!--   
+	// 카테고리별 상품 리스트 : 2차 분류 
 	<select id="list_2" resultType="com.shop.domain.GoodsViewVO">
 	select
 	    g.gdsNum, g.gdsName, g.cateCode, c.cateCodeRef, c.cateName,
@@ -27,8 +28,9 @@
 	                on g.cateCode = c.cateCode            
 	            where g.cateCode = #{cateCode}
 	</select>
-	
+	-->
 	<!-- 상품 리뷰 작성 -->
+	
 	<insert id="registReply">
 		insert into tbl_reply (gdsNum, userId, repNum, repCon, repRating)
 	   		values (#{gdsNum}, #{userId}, tbl_reply_seq.nextval, #{repCon}, #{repRating})
@@ -78,7 +80,7 @@
 		select
 		    row_number() over(order by c.cartNum desc) as num,
 		    c.cartNum, c.userId, c.gdsNum, c.cartStock, c.addDate,
-		    g.gdsName, g.gdsPrice, g.gdsThumbImg
+		    g.gdsName, g.gdsPrice, g.gdsImg
 		from tbl_cart c
 		    inner join tbl_goods g
 		        on c.gdsNum = g.gdsNum    
@@ -128,7 +130,7 @@
 		    o.userAddr1, o.userAddr2, o.userAddr3,
 		    o.orderPhon, o.amount, o.orderDate,
 		    d.orderDetailsNum, d.gdsNum, d.cartStock,
-		    g.gdsName, g.gdsThumbImg, g.gdsPrice
+		    g.gdsName, g.gdsImg, g.gdsPrice
 		from tbl_order o
 		        inner join tbl_order_details d
 		            on o.orderId = d.orderId
@@ -136,6 +138,25 @@
 		            on d.gdsNum = g.gdsNum
 		    where o.userId = #{userId}
 		        and o.orderId = #{orderId}
+	</select>
+	
+	<!-- 추천상품 리스트  -->
+	<select id="sugList" resultType="com.shop.domain.GoodsViewVO">
+		SELECT tg.*
+		FROM 
+		(SELECT REGEXP_SUBSTR( SUGNUM , '[^,]+' ,1,1) AS sugNum1,
+			   REGEXP_SUBSTR( SUGNUM , '[^,]+' ,1,2) AS sugnum2,
+			   REGEXP_SUBSTR( SUGNUM , '[^,]+' ,1,3) AS sugnum3,
+			   REGEXP_SUBSTR( SUGNUM , '[^,]+' ,1,4) AS sugnum4,
+			   REGEXP_SUBSTR( SUGNUM , '[^,]+' ,1,5) AS sugnum5
+		FROM goods_sug 
+		WHERE GDSNUM =#{gdsNum})
+		s,tbl_goods tg
+		WHERE s.sugNum1 = GDSNUM
+		OR s.sugNum2 = GDSNUM
+		OR s.sugNum3 = GDSNUM
+		OR s.sugNum4 = GDSNUM
+		OR s.sugNum5 = GDSNUM
 	</select>
 	
 	

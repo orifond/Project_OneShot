@@ -16,7 +16,7 @@ public class GoodsViewVO {
 	private String cateCodeRef;
 	private String cateName;
 	
-	private String gdsThumbImg;
+	/* private String gdsThumbImg;
 	
 	
 	public String getGdsThumbImg() {
@@ -25,6 +25,8 @@ public class GoodsViewVO {
 	public void setGdsThumbImg(String gdsThumbImg) {
 		this.gdsThumbImg = gdsThumbImg;
 	}
+	*/
+	
 	public String getCateCodeRef() {
 		return cateCodeRef;
 	}

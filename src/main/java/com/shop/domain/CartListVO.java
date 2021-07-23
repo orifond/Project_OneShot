@@ -19,8 +19,8 @@ public class CartListVO {
 	private int num;
 	private String gdsName;
 	private int gdsPrice;
-	private String gdsThumbImg;
-	
+	//private String gdsThumbImg;
+	private String gdsImg;
 	
 	public int getCartNum() {
 		return cartNum;
@@ -70,11 +70,19 @@ public class CartListVO {
 	public void setGdsPrice(int gdsPrice) {
 		this.gdsPrice = gdsPrice;
 	}
+	/*
 	public String getGdsThumbImg() {
 		return gdsThumbImg;
 	}
 	public void setGdsThumbImg(String gdsThumbImg) {
 		this.gdsThumbImg = gdsThumbImg;
+	}
+	*/
+	public String getGdsImg() {
+		return gdsImg;
+	}
+	public void setGdsImg(String gdsImg) {
+		this.gdsImg = gdsImg;
 	}
 	
 			

@@ -76,13 +76,13 @@ public class AdminController {
 	  // gdsImg에 원본 파일 경로 + 파일명 저장
 	  vo.setGdsImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
 	  // gdsThumbImg에 썸네일 파일 경로 + 썸네일 파일명 저장
-	  vo.setGdsThumbImg(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
+	  //vo.setGdsThumbImg(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
 	 } else { // 첨부된 파일이 없으면
 	  fileName = File.separator + "images" + File.separator + "none.png";
 	  // 미리 준비된 none.png파일을 대신 출력함
 	  
 	  vo.setGdsImg(fileName);
-	  vo.setGdsThumbImg(fileName);
+	  //vo.setGdsThumbImg(fileName);
 	 }
 	      
 	 adminService.register(vo);
@@ -134,7 +134,7 @@ public class AdminController {
 	 if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
 	  // 기존 파일을 삭제
 	  new File(uploadPath + req.getParameter("gdsImg")).delete();
-	  new File(uploadPath + req.getParameter("gdsThumbImg")).delete();
+	  //new File(uploadPath + req.getParameter("gdsThumbImg")).delete();
 	  
 	  // 새로 첨부한 파일을 등록
 	  String imgUploadPath = uploadPath + File.separator + "imgUpload";
@@ -142,12 +142,12 @@ public class AdminController {
 	  String fileName = UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
 	  
 	  vo.setGdsImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
-	  vo.setGdsThumbImg(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
+	  //vo.setGdsThumbImg(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
 	  
 	 } else { // 새로운 파일이 등록되지 않았다면
 	  // 기존 이미지를 그대로 사용
 	  vo.setGdsImg(req.getParameter("gdsImg"));
-	  vo.setGdsThumbImg(req.getParameter("gdsThumbImg"));
+	  //vo.setGdsThumbImg(req.getParameter("gdsThumbImg"));
 	  
 	 }
 	 

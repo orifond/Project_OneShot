@@ -57,6 +57,9 @@ public interface ShopService {
 	
 	// 특정 주문 목록
 	public List<OrderListVO> orderView(OrderVO order) throws Exception;
+	
+	// 추천상품 리스트
+	public List<GoodsViewVO> sugList(int gdsNum) throws Exception;
 
 	
 }

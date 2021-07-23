@@ -72,6 +72,13 @@ public class ShopController {
 	 
 	 GoodsViewVO view = service.goodsView(gdsNum);
 	 model.addAttribute("view", view);
+	 
+	 List<GoodsViewVO> sugList = service.sugList(gdsNum);
+	 if(sugList!=null) {
+		 model.addAttribute("sugList", sugList); 
+	 }else {
+		 // null 값일 경우 
+	 }
 	
 	 /* 
 	List<ReplyListVO> reply = service.replyList(gdsNum);

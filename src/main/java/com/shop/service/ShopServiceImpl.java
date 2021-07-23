@@ -120,4 +120,11 @@ public class ShopServiceImpl implements ShopService {
 		return dao.orderView(order);
 	}
 	
+	// 추천상품 리스트
+	@Override
+	public List<GoodsViewVO> sugList(int gdsNum) throws Exception {
+		List<GoodsViewVO> sugList = dao.sugList(gdsNum);
+		return sugList;
+	}
+	
 }

@@ -194,7 +194,7 @@
 				  </div>
 				 
 				  <div class="thumb">
-				   <img src="${cartList.gdsThumbImg}" />
+				   <img src="${cartList.gdsImg}" />
 				  </div>
 				  <div class="gdsInfo">
 				   <p>

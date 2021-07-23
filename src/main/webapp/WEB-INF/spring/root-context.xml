@@ -17,8 +17,8 @@
 		<property value="jdbc:log4jdbc:oracle:thin:@localhost:1521/XE" name="url"/>
 		
 	<!-- 자신이 사용하는 오라클 계정과 비밀번호로 변경 -->
-		<property value="sys as sysdba" name="username"/>
-		<property value="1234" name="password"/>
+		<property value="scott" name="username"/>
+		<property value="tiger" name="password"/>
 		<!-- 수정 scott tiger -->
 	</bean>
 	

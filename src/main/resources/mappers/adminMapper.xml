@@ -15,9 +15,9 @@
 	<!-- 상품 등록 -->
 	<insert id="register">
 		insert into tbl_goods (gdsNum, gdsName, cateCode, gdsPrice, gdsStock, gdsDes, 
-								gdsImg, gdsThumbImg)
+								gdsImg)
 	   		values (tbl_goods_seq.nextval, #{gdsName}, #{cateCode}, #{gdsPrice}, #{gdsStock}, #{gdsDes},
-	   		 		#{gdsImg}, #{gdsThumbImg})
+	   		 		#{gdsImg})
 	</insert>
  
 	<!-- 상품 목록 -->	
@@ -30,10 +30,11 @@
 	</select>
 	-->
 	
+	<!-- 상품 목록 -->
 	<select id="goodslist" resultType="com.shop.domain.GoodsViewVO">
 		select
 		    g.gdsNum, g.gdsName, g.cateCode, c.cateCodeRef, c.cateName, gdsPrice, gdsStock, gdsDes, gdsImg, gdsDate,
-		    g.gdsImg, g.gdsThumbImg
+		    g.gdsImg
 		        from tbl_goods g
 		            inner join goods_category c
 		                on g.cateCode = c.cateCode
@@ -53,7 +54,7 @@
 	<select id="goodsView" resultType="com.shop.domain.GoodsViewVO">
 		select
 		    g.gdsNum, g.gdsName, g.cateCode, c.cateCodeRef, c.cateName, gdsPrice, gdsStock, gdsDes, gdsImg, gdsDate,
-		    g.gdsImg, g.gdsThumbImg
+		    g.gdsImg
 		        from tbl_goods g
 		            inner join goods_category c
 		                on g.cateCode = c.cateCode            
@@ -70,7 +71,6 @@
 		        gdsStock = #{gdsStock},
 		        gdsDes = #{gdsDes},
 		        gdsImg = #{gdsImg},
-		        gdsThumbImg = #{gdsThumbImg}
 		        
 		    where gdsNum = ${gdsNum}
 	</update>

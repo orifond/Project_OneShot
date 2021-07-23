@@ -93,7 +93,7 @@ textarea#gdsDes { width:400px; height:180px; }
 			  <c:forEach items="${list}" var="list">
 			  <tr>
 			   <td>  
-			   <img src="${list.gdsThumbImg}">
+			   <img src="${list.gdsImg}">
 			   </td>
 			   <td>
 				   <a href="/admin/goods/view?n=${list.gdsNum}">${list.gdsName}</a>

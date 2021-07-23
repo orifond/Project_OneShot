@@ -22,6 +22,7 @@ public class GoodsVO {
 	private String gdsImg;
 	private Date gdsDate;
 	
+	/*
 	private String gdsThumbImg;
 	
 	public String getGdsThumbImg() {
@@ -30,6 +31,8 @@ public class GoodsVO {
 	public void setGdsThumbImg(String gdsThumbImg) {
 		this.gdsThumbImg = gdsThumbImg;
 	}
+	*/
+	
 	public int getGdsNum() {
 		return gdsNum;
 	}

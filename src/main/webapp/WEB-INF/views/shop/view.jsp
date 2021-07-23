@@ -2,6 +2,7 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 
 <html>
 <head>
@@ -232,11 +233,40 @@
 				  
 				  
 				 </div>
-				 
-				 <div class="gdsDes">${view.gdsDes}</div>
+
+				 <div id="recommendations">
+					<section id="content">
+						<h3>추천상품</h3>
+						<ul>
+							 <c:forEach items="${sugList}" var="sug">
+							 <li>
+							  <div class="goodsImg">
+							   <img src="${sug.gdsImg}">
+							  </div> 
+							  <div class="goodsName">
+							   <a href="/shop/view?n=${sug.gdsNum}">${sug.gdsName}</a>
+							  </div>
+							 </li>
+							 </c:forEach>
+						</ul>
+					</section>
 				</div>
-				
-				<div id="reply">
+
+
+						<div class="gdsDes">
+							<c:set var="gdsDes" value="${view.gdsDes}" />
+							<c:set var="img" value="${fn:split(gdsDes,',')}" />
+
+							<c:forTokens items="${gdsDes}" delims="," var="mySplit"
+								varStatus="status">
+								<c:if test="${status.index > 0}">
+									<img src=${mySplit}>
+								</c:if>
+							</c:forTokens>
+
+						</div>
+
+						<div id="reply">
 
 				 <c:if test="${member == null }">
 				  <p>리뷰를 남기시려면 <a href="/member/signin">로그인</a>해주세요</p>

@@ -111,7 +111,7 @@
 			  <c:forEach items="${orderView}" var="orderView">     
 			  <li>
 			   <div class="thumb">
-			    <img src="${orderView.gdsThumbImg}" />
+			    <img src="${orderView.gdsImg}" />
 			   </div>
 			   <div class="gdsInfo">
 			    <p>
