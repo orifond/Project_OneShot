@@ -2,6 +2,8 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <html>
 <head>
 	<title>OneShot</title>
@@ -92,7 +94,11 @@
 				   <img src="${list.gdsImg}">
 				  </div> 
 				  <div class="goodsName">
-				   <a href="/shop/view?n=${list.gdsNum}">${list.gdsName}</a>
+				   <a href="/shop/view?n=${list.gdsNum}">
+				    <c:if test= "${fn:length(list.gdsName) > 20}">
+				   	 ${fn:substring(list.gdsName,0,15)}..
+				   	 </c:if>
+				   </a>
 				  </div>
 				 </li>
 				 </c:forEach>
