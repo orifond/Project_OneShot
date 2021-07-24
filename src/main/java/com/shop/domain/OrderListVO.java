@@ -19,7 +19,7 @@ public class OrderListVO {
 	private int cartStock;
 	
 	private String gdsName;
-	private String gdsThumbImg;
+	private String gdsImg;
 	private int gdsPrice;
 	
 	public int getGdsPrice() {
@@ -106,11 +106,11 @@ public class OrderListVO {
 	public void setGdsName(String gdsName) {
 		this.gdsName = gdsName;
 	}
-	public String getGdsThumbImg() {
-		return gdsThumbImg;
+	public String getGdsImg() {
+		return gdsImg;
 	}
-	public void setGdsThumbImg(String gdsThumbImg) {
-		this.gdsThumbImg = gdsThumbImg;
+	public void setGdsThumbImg(String gdsImg) {
+		this.gdsImg = gdsImg;
 	}
 	
 	

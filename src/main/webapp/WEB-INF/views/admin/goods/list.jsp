@@ -5,6 +5,7 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="/resources/css/styles.css" />
 	<title>OneShot Admin</title>
 	
 <script src="/resources/jquery/jquery-3.3.1.min.js"></script>
@@ -45,16 +46,6 @@
 #container_box table tr:hover { background:#eee; }
 #container_box table td { padding:10px; text-align:center; }
 #container_box table img { width:150px; height:auto; }
-</style>
-
-<style>
-.inputArea { margin:10px 0; }
-select { width:100px; }
-label { display:inline-block; width:70px; padding:5px; }
-label[for='gdsDes'] { display:block; }
-input { width:150px; }
-textarea#gdsDes { width:400px; height:180px; }
-
 </style>
 
 </head>

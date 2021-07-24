@@ -1,7 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html>
-<head>
-	<title>OneShot</title>
+	
 	<style>
 	
 		body { margin:0; padding:0; font-family:'맑은 고딕', verdana; }
@@ -47,46 +44,16 @@
 		aside#aside li:hover > ul.low li a:hover { background:#fff;}
 		aside#aside li > ul.low li { width:180px; }
 		
-		footer#footer { margin-top:100px;}
+		footer#footer { margin-top:100px; border-radius:50px 50px 0 0; }
 		footer#footer div#footer_box { padding:0 20px; }
 		
 	</style>
 	
-</head>
-<body>
-<div id="root">
-	<header id="header">
-		<div id="header_box">
-			<%@ include file="include/header.jsp" %>
-		</div>
-	</header>
-
-	<nav id="nav">
-		<div id="nav_box">
-			<%@ include file="include/nav.jsp" %>
-		</div>
-	</nav>
 	
-	<section id="container">
-		<div id="container_box">
-		
-			<section id="content">
-				본문 영역
-			</section>
-			
-			<aside id="aside">
-				<%@ include file="include/aside.jsp" %>
-			</aside>
-			
-		</div>
-	</section>
-
-	<footer id="footer">
-		<div id="footer_box">
-			<%@ include file="include/footer.jsp" %>
-		</div>		
-	</footer>
-
-</div>
-</body>
-</html>
+<style>
+	section#content ul li { display:inline-block; margin:10px; }
+	section#content div.goodsThumb img { width:200px; height:200px; }
+	section#content div.goodsName { padding:10px 0; text-align:center; }
+	section#content div.goodsName a { color:#000; }
+</style>
+	

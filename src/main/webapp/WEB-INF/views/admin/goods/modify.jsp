@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
+    <link rel="stylesheet" href="/resources/css/styles.css" />
 	<title>OneShot Admin</title>
 	
 <script src="/resources/jquery/jquery-3.3.1.min.js"></script>

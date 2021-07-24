@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap");
+@import "reset.css";
+@import "variables.css";
+
+/* Components*/
+
+
+
+
+
+
+
+/* screens*/
+@import "screens/adminRegister.css";
+@import "screens/adminView.css";
+@import "screens/cartList.css";
+@import "screens/home.css";
+@import "screens/orderList.css";
+@import "screens/shopList.css";
+@import "screens/shopView.css";
+@import "screens/signIn.css";
+@import "screens/signUp.css";

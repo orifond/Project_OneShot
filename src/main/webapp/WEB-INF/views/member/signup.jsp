@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
+    <link rel="stylesheet" href="/resources/css/styles.css" />
 	<title>OneShot</title>
+	
 </head>
 <body>
 <div id="root">
@@ -44,7 +46,14 @@
  </form>   
 </section>			
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 	<footer id="footer">
 		<div id="footer_box">
 			<%@ include file="../include/footer.jsp" %>
