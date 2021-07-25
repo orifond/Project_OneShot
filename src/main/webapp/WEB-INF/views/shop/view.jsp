@@ -68,15 +68,20 @@ div.goods div.gdsDes {
 	padding-top: 30px;
 }
 
-div.goods div.goodssugImg {
-	float: left;
-	width: 350px;
+div.goodssugImg {
+	width: 200px;
+	padding: 10px;
+	
 }
 
-div.goods div.goodssugImg img {
+div.goodssugImg img {
 	width: 200px;
-	height: auto;
+	height: auto;	
 }
+div.goodsName { 
+	padding:10px 0; 
+	text-align:center; 	
+	}
 
 </style>
 
@@ -349,7 +354,7 @@ div.modalContent button.modal_cancel {
 												</div>
 												<div class="goodsName">
 													<c:if test="${fn:length(sug.gdsName) > 10}">
-							   	 ${fn:substring(sug.gdsName,0,15)}..
+							   	 ${fn:substring(sug.gdsName,0,10)}..
 							   	 </c:if>
 
 												</div>

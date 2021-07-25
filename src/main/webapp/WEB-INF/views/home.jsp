@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <html>
 <head>
 	<link rel="stylesheet" href="/resources/css/components/default.css" />
@@ -23,7 +25,20 @@
 		<div id="container_box">
 		
 			<section id="content">
-				본문 영역
+				<ul>
+				 <c:forEach items="${list}" var="list">
+				 <li> <a href="/shop/view?n=${list.gdsNum}">
+					  <div class="goodsThumb">
+						   <img src="${list.gdsImg}">
+					  </div> 
+					  <div class="goodsName">
+					    <c:if test= "${fn:length(list.gdsName) > 10}">
+				   	 ${fn:substring(list.gdsName,0,25)}…
+				   	 </c:if>
+				 	 </div>
+				  </a></li>
+				 </c:forEach>
+			</ul>
 			</section>
 			
 			<aside id="aside">

@@ -7,12 +7,12 @@ ul, lo, li { margin:0; padding:0; list-style:none; }
 
 /* ---------- */
 
-div#root { width:900px; margin:0 auto; }
+	div#root { width:90%; margin:0 auto; }
 header#header { }
 nav#nav { }
 section#container { }
-section#content { float:right; width:700px; }
-aside#aside { float:left; width:180px; }
+	section#content { float:right; width:80%; }
+aside#aside { float:left; width:20%; }
 section#container::after { content:""; display:block; clear:both; }	
 footer#footer { background:#eee; padding:20px; }
 
@@ -41,5 +41,5 @@ aside#aside li:hover > ul.low li a { background:#eee; border:1px solid #eee; }
 aside#aside li:hover > ul.low li a:hover { background:#fff;}
 aside#aside li > ul.low li { width:180px; }
 
-footer#footer { margin-top:100px; border-radius:50px 50px 0 0; }
-footer#footer div#footer_box { padding:0 20px; }
+	footer#footer { background:#f9f9f9; padding:20px; }
+	footer#footer ul li { display:inline-block; margin-right:10px; } 
