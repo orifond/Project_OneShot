@@ -22,8 +22,8 @@ div.goods div.goodsImg img {
 }
 
 div.goods div.goodsInfo {
-	float: right;
-	width: 330px;
+	float: auto;
+	width: auto;
 	font-size: 22px;
 }
 
@@ -33,7 +33,7 @@ div.goods div.goodsInfo p {
 
 div.goods div.goodsInfo p span {
 	display: inline-block;
-	width: 100px;
+	width: auto;
 	margin-right: 15px;
 }
 
@@ -71,18 +71,16 @@ div.goods div.gdsDes {
 div.goodssugImg {
 	width: 200px;
 	padding: 10px;
-	
+	float: left;
 }
-
 div.goodssugImg img {
 	width: 200px;
-	height: auto;	
+	height: auto;
 }
-div.goodsName { 
-	padding:10px 0; 
-	text-align:center; 	
+div.goodsName {
+	text-align:center;
+	display:inline-block;
 	}
-
 </style>
 
 <style>
@@ -350,7 +348,7 @@ div.modalContent button.modal_cancel {
 									<c:forEach items="${sugList}" var="sug">
 										<li><a href="/shop/view?n=${sug.gdsNum}">
 												<div class="goodssugImg">
-													<img src="${sug.gdsImg}">
+												<img src="${sug.gdsImg}">
 												</div>
 												<div class="goodsName">
 													<c:if test="${fn:length(sug.gdsName) > 10}">
