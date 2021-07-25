@@ -21,9 +21,9 @@
 		header#header {}
 		nav#nav {}
 		section#container { }
-			section#content { float:right; width:700px; }
-			aside#aside { float:left; width:180px; }
-			section#container::after { content:""; display:block; clear:both; }	
+		section#content { float:right; width:700px; }
+		aside#aside { float:left; width:180px; }
+		section#container::after { content:""; display:block; clear:both; }	
 		footer#footer { background:#eee; padding:20px; }
 		
 		/* ---------- */
@@ -57,12 +57,6 @@
 	</style>
 	
 	<style>
-		/*
-		section#content ul li { display:inline-block; margin:10px; }
-		section#content div.goodsThumb img { width:200px; height:200px; }
-		section#content div.goodsName { padding:10px 0; text-align:center; }
-		section#content div.goodsName a { color:#000; }
-		*/
 		section#content ul li { margin:10px 0; padding:10px 0; border-bottom:1px solid #999; }
 		section#content ul li img { width:250px; height:250px; }
 		section#content ul li::after { content:""; display:block; clear:both; }

@@ -24,9 +24,9 @@
 		header#header {}
 		nav#nav {}
 		section#container { }
-			section#content { float:right; width:700px; }
-			aside#aside { float:left; width:180px; }
-			section#container::after { content:""; display:block; clear:both; }	
+		section#content { float:right; width:700px; }
+		aside#aside { float:left; width:180px; }
+		section#container::after { content:""; display:block; clear:both; }	
 		footer#footer { background:#eee; padding:20px; }
 		
 		/* ---------- */
@@ -89,18 +89,16 @@
 					
 			<ul>
 				 <c:forEach items="${list}" var="list">
-				 <li>
-				  <div class="goodsThumb">
-				   <img src="${list.gdsImg}">
-				  </div> 
-				  <div class="goodsName">
-				   <a href="/shop/view?n=${list.gdsNum}">
-				    <c:if test= "${fn:length(list.gdsName) > 20}">
+				 <li> <a href="/shop/view?n=${list.gdsNum}">
+					  <div class="goodsThumb">
+						   <img src="${list.gdsImg}">
+					  </div> 
+					  <div class="goodsName">
+					    <c:if test= "${fn:length(list.gdsName) > 20}">
 				   	 ${fn:substring(list.gdsName,0,15)}..
 				   	 </c:if>
-				   </a>
-				  </div>
-				 </li>
+				 	 </div>
+				  </a></li>
 				 </c:forEach>
 			</ul>
 								

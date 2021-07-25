@@ -22,9 +22,9 @@
 		header#header {}
 		nav#nav {}
 		section#container { }
-			section#content { float:right; width:700px; }
-			aside#aside { float:left; width:180px; }
-			section#container::after { content:""; display:block; clear:both; }	
+		section#content { float:right; width:700px; }
+		aside#aside { float:left; width:180px; }
+		section#container::after { content:""; display:block; clear:both; }	
 		footer#footer { background:#eee; padding:20px; }
 		
 		/* ---------- */
