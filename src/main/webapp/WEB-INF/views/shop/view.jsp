@@ -15,28 +15,23 @@ div.goods div.goodsImg {
 	float: left;
 	width: 350px;
 }
-
 div.goods div.goodsImg img {
 	width: 350px;
 	height: auto;
 }
-
 div.goods div.goodsInfo {
 	float: auto;
 	width: auto;
 	font-size: 22px;
 }
-
 div.goods div.goodsInfo p {
 	margin: 0 0 20px 0;
 }
-
 div.goods div.goodsInfo p span {
 	display: inline-block;
 	width: auto;
 	margin-right: 15px;
 }
-
 div.goods div.goodsInfo p.cartStock input {
 	font-size: 22px;
 	width: 50px;
@@ -44,30 +39,25 @@ div.goods div.goodsInfo p.cartStock input {
 	margin: 0;
 	border: 1px solid #eee;
 }
-
 div.goods div.goodsInfo p.cartStock button {
 	font-size: 26px;
 	border: none;
 	background: none;
 }
-
 div.goods div.goodsInfo p.addToCart {
 	text-align: right;
 }
-
 div.goods div.goodsInfo p.addToCart button {
 	font-size: 22px;
 	padding: 5px 10px;
 	border: 1px solid #eee;
 	background: #eee;
 }
-
 div.goods div.gdsDes {
 	font-size: 18px;
 	clear: both;
 	padding-top: 30px;
 }
-
 div.goodssugImg {
 	width: 200px;
 	padding: 10px;
@@ -76,13 +66,13 @@ div.goodssugImg {
 div.goodssugImg img {
 	width: 200px;
 	height: auto;
+	padding: 40px;
 }
 div.goodsName {
 	text-align:center;
 	display:inline-block;
 	}
 </style>
-
 <style>
 section.replyForm {
 	padding: 30px 0;
@@ -348,19 +338,15 @@ div.modalContent button.modal_cancel {
 									<c:forEach items="${sugList}" var="sug">
 										<li><a href="/shop/view?n=${sug.gdsNum}">
 												<div class="goodssugImg">
-												<img src="${sug.gdsImg}">
-												</div>
-												<div class="goodsName">
-													<c:if test="${fn:length(sug.gdsName) > 10}">
-							   	 ${fn:substring(sug.gdsName,0,10)}..
-							   	 </c:if>
-
+													<img src="${sug.gdsImg}">
 												</div>
 										</a></li>
 									</c:forEach>
 								</ul>
 							</section>
 						</div>
+						
+						
 
 						<div class="gdsDes">
 							<c:set var="gdsDes" value="${view.gdsDes}" />
