@@ -2,17 +2,14 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <html>
 <head>
-    <link rel="stylesheet" href="/resources/css/styles.css" />
 	<title>OneShot Admin</title>
+	<script src="/resources/jquery/jquery-3.3.1.min.js"></script>
 	
-<script src="/resources/jquery/jquery-3.3.1.min.js"></script>
-
-<link rel="stylesheet" href="/resources/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="/resources/bootstrap/bootstrap-theme.min.css">
-<script src="/resources/bootstrap/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/resources/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/resources/bootstrap/bootstrap-theme.min.css">
+	<script src="/resources/bootstrap/bootstrap.min.js"></script>
 	
 <style>
 	body { font-family:'맑은 고딕', verdana; padding:0; margin:0; }
@@ -26,7 +23,7 @@
 	nav#nav { padding:10px; text-align:right; }
 	nav#nav ul li { display:inline-block; margin-left:10px; }
  
- 		section#container { padding:20px 0; border-top:2px solid #eee; border-bottom:2px solid #eee; }
+	section#container { padding:20px 0; border-top:2px solid #eee; border-bottom:2px solid #eee; }
 	section#container::after { content:""; display:block; clear:both; }
 	aside { float:left; width:200px; }
 	div#container_box { float:right; width:calc(100% - 200px - 20px); }
@@ -40,15 +37,15 @@
 </style>
 
 <style>
-#container_box table { width:900px; } 
-#container_box table th { font-size:20px; font-weight:bold;
-							text-align:center; padding:10px; border-bottom:2px solid #666; }
-#container_box table tr:hover { background:#eee; }
-#container_box table td { padding:10px; text-align:center; }
-#container_box table img { width:150px; height:auto; }
+	#container_box table { width:900px; } 
+	#container_box table th { font-size:20px; font-weight:bold;
+								text-align:center; padding:10px; border-bottom:2px solid #666; }
+	#container_box table tr:hover { background:#eee; }
+	#container_box table td { padding:10px; text-align:center; }
+	#container_box table img { width:150px; height:auto; }
 </style>
-
 </head>
+
 <body>
 <div id="root">
 	<header id="header">

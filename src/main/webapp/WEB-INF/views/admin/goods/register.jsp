@@ -4,17 +4,15 @@
     <link rel="stylesheet" href="/resources/css/styles.css" />
 	<title>OneShot Admin</title>
 	
-<script src="/resources/jquery/jquery-3.3.1.min.js"></script>
-
-<link rel="stylesheet" href="/resources/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="/resources/bootstrap/bootstrap-theme.min.css">
-<script src="/resources/bootstrap/bootstrap.min.js"></script>
-
-<script src="/resources/ckeditor/ckeditor.js"></script>
+	<script src="/resources/jquery/jquery-3.3.1.min.js"></script>
 	
-
+	<link rel="stylesheet" href="/resources/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/resources/bootstrap/bootstrap-theme.min.css">
+	<script src="/resources/bootstrap/bootstrap.min.js"></script>
 	
+	<script src="/resources/ckeditor/ckeditor.js"></script>	
 </head>
+
 <body>
 <div id="root">
 	<header id="header">

@@ -3,8 +3,8 @@
 <head>
     <link rel="stylesheet" href="/resources/css/styles.css" />
 	<title>OneShot</title>
-	
 </head>
+
 <body>
 <div id="root">
 	<header id="header">

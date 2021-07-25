@@ -3,14 +3,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
-
-
 <html>
 <head>
-<title>OneShot</title>
+	<link rel="stylesheet" href="/resources/css/components/default.css" />
+	<title>OneShot</title>
 
-<script src="/resources/jquery/jquery-3.3.1.min.js"></script>
-<link rel="stylesheet" href="/resources/css/user/shop/default.css" />
+	<script src="/resources/jquery/jquery-3.3.1.min.js"></script>
 
 <style>
 div.goods div.goodsImg {
@@ -79,6 +77,7 @@ div.goods div.goodssugImg img {
 	width: 200px;
 	height: auto;
 }
+
 </style>
 
 <style>
@@ -349,8 +348,8 @@ div.modalContent button.modal_cancel {
 													<img src="${sug.gdsImg}">
 												</div>
 												<div class="goodsName">
-													<c:if test="${fn:length(sug.gdsName) > 15}">
-							   	 ${fn:substring(sug.gdsName,0,10)}..
+													<c:if test="${fn:length(sug.gdsName) > 10}">
+							   	 ${fn:substring(sug.gdsName,0,15)}..
 							   	 </c:if>
 
 												</div>

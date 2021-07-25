@@ -1,17 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
-    <link rel="stylesheet" href="/resources/css/styles.css" />
 	<title>OneShot Admin</title>
 	
-<script src="/resources/jquery/jquery-3.3.1.min.js"></script>
-
-<link rel="stylesheet" href="/resources/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="/resources/bootstrap/bootstrap-theme.min.css">
-<script src="/resources/bootstrap/bootstrap.min.js"></script>
-
-<script src="/resources/ckeditor/ckeditor.js"></script>
+	<script src="/resources/jquery/jquery-3.3.1.min.js"></script>
 	
+	<link rel="stylesheet" href="/resources/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/resources/bootstrap/bootstrap-theme.min.css">
+	<script src="/resources/bootstrap/bootstrap.min.js"></script>
+	
+	<script src="/resources/ckeditor/ckeditor.js"></script>
 <style>
 	body { font-family:'맑은 고딕', verdana; padding:0; margin:0; }
 	ul { padding:0; margin:0; list-style:none;  }
@@ -24,7 +22,7 @@
 	nav#nav { padding:10px; text-align:right; }
 	nav#nav ul li { display:inline-block; margin-left:10px; }
  
- 		section#container { padding:20px 0; border-top:2px solid #eee; border-bottom:2px solid #eee; }
+	section#container { padding:20px 0; border-top:2px solid #eee; border-bottom:2px solid #eee; }
 	section#container::after { content:""; display:block; clear:both; }
 	aside { float:left; width:200px; }
 	div#container_box { float:right; width:calc(100% - 200px - 20px); }
@@ -37,19 +35,18 @@
 	footer#footer ul li { display:inline-block; margin-right:10px; } 
 </style>
 
-
 <style>
-.inputArea { margin:10px 0; }
-select { width:100px; }
-label { display:inline-block; width:70px; padding:5px; }
-label[for='gdsDes'] { display:block; }
-input { width:150px; }
-textarea#gdsDes { width:400px; height:180px; }
-
-.select_img img { width:500px; margin:20px 0; }}
+	.inputArea { margin:10px 0; }
+	select { width:100px; }
+	label { display:inline-block; width:70px; padding:5px; }
+	label[for='gdsDes'] { display:block; }
+	input { width:150px; }
+	textarea#gdsDes { width:400px; height:180px; }
+	
+	.select_img img { width:500px; margin:20px 0; }}
 </style>
-
 </head>
+
 <body>
 <div id="root">
 	<header id="header">
