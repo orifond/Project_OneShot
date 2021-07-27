@@ -4,16 +4,17 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
-    <link rel="stylesheet" href="/resources/css/styles.css" />
+	<link rel="stylesheet" href="/resources/css/components/admin_default.css" />
+	<link rel="stylesheet" href="/resources/css/screens/admin_default.css" />
 	<title>OneShot Admin</title>
+		
+	<script src="/resources/jquery/jquery-3.3.1.min.js"></script>
 	
-<script src="/resources/jquery/jquery-3.3.1.min.js"></script>
-
-<link rel="stylesheet" href="/resources/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="/resources/bootstrap/bootstrap-theme.min.css">
-<script src="/resources/bootstrap/bootstrap.min.js"></script>
-
+	<link rel="stylesheet" href="/resources/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/resources/bootstrap/bootstrap-theme.min.css">
+	<script src="/resources/bootstrap/bootstrap.min.js"></script>
 </head>
+
 <body>
 <div id="root">
 	<header id="header">

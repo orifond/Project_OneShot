@@ -5,18 +5,8 @@
 <html>
 <head>
 	<link rel="stylesheet" href="/resources/css/components/default.css" />	
+    <link rel="stylesheet" href="/resources/css/screens/orderList.css"/>
 	<title>OneShot</title>
-		
-	<style>
-		/*
-		 section#content ul li { display:inline-block; margin:10px; }
-		 section#content div.goodsThumb img { width:200px; height:200px; }
-		 section#content div.goodsName { padding:10px 0; text-align:center; }
-		 section#content div.goodsName a { color:#000; }
-		*/
-		 section#content ul li { border:5px solid #eee; padding:10px 20px; margin-bottom:20px; }
-		 section#content .orderList span { font-size:20px; font-weight:bold; display:inline-block; width:90px; margin-right:10px; }
-	</style>
 </head>
 
 <body>

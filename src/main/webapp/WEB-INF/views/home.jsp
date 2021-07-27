@@ -24,6 +24,7 @@
 
 		<section id="container">
 			<div id="container_box">
+			</div>
 		</section>
 
 		<aside id="aside">
@@ -38,7 +39,6 @@
 		</center>
 		
 	</div>
-	</section>
 <br>
 <br>
 <br>
@@ -54,6 +54,5 @@
 		</div>
 	</footer>
 
-	</div>
 </body>
 </html>
