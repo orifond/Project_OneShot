@@ -1,8 +1,9 @@
 # Project_OneShot
 
 
-파이널 프로젝트 
+원샷 파이널 프로젝트 
 2021.06.28 ~ 2021.07.26
-![image](https://user-images.githubusercontent.com/82400471/127401495-9d409cd6-9a49-4df6-bc62-c416f67c0b23.png)
-[OneShot.pdf](https://github.com/orifond/Project_OneShot/files/6896665/OneShot.pdf)
+![2021-08-03 14;14;32](https://user-images.githubusercontent.com/82400471/127961570-847da51d-bd6e-4437-aa6f-bf7e23b11b1c.PNG)
+[OneShot.pdf](https://github.com/orifond/Project_OneShot/files/6921179/OneShot.pdf)
+
 
